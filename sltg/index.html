@@ -1103,19 +1103,22 @@ ul.clean li::before{content:"";position:absolute;left:4px;top:.5em;width:14px;he
 <!-- ===================== 14. 3.3–3.4 ===================== -->
 <style>
 #s14 .dg{position:absolute;left:96px;top:262px;width:1000px;height:700px;z-index:5}
-#s14 .pt{position:absolute;width:440px;height:96px;padding:12px 20px;border-radius:22px;background:rgba(255,255,255,.9);border:1px solid #fff;box-shadow:0 14px 30px rgba(20,70,216,.14);display:flex;flex-direction:column;justify-content:center}
-#s14 .pt small{font-size:16px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--blue)}
-#s14 .pt b{font-size:24px;color:var(--navy);line-height:1.2}
-#s14 .pt span{font-size:18px;color:var(--ink2);font-weight:500}
-#s14 .pt.a{left:0;top:0}#s14 .pt.b{left:560px;top:0}#s14 .pt.c{left:0;top:604px}#s14 .pt.d{left:560px;top:604px}
-#s14 .core{position:absolute;left:0;top:300px;width:1000px;height:96px;border-radius:24px;background:var(--block);color:#fff;display:flex;align-items:center;justify-content:center;gap:18px;box-shadow:0 20px 44px rgba(20,70,216,.38)}
-#s14 .core b{font-size:32px}#s14 .core span{font-size:20px;color:#E8F1FF;font-weight:500}
-#s14 .fl{position:absolute;width:440px;display:flex;flex-direction:column;gap:8px;padding-left:28px;border-left:4px dashed rgba(20,70,216,.35)}
-#s14 .fl.a{left:30px;top:116px}#s14 .fl.b{left:590px;top:116px}#s14 .fl.c{left:30px;top:412px}#s14 .fl.d{left:590px;top:412px}
-#s14 .fl p{display:flex;gap:10px;align-items:flex-start;font-size:20px;line-height:1.35;font-weight:500;color:var(--ink);margin:0;background:rgba(255,255,255,.72);border-radius:14px;padding:7px 12px}
-#s14 .fl p b{color:var(--navy)}
-#s14 .fl i{flex:none;width:28px;height:28px;border-radius:50%;display:grid;place-items:center;font-style:normal;font-weight:900;font-size:18px;color:#fff;margin-top:1px}
-#s14 .fl i.up{background:var(--blue)}#s14 .fl i.dn{background:#4E7300}#s14 .fl i.eq{background:#7F8CA6}
+#s14 .dg svg{position:absolute;inset:0;overflow:visible}
+#s14 .ln{fill:none;stroke-width:5;stroke-linecap:round}
+#s14 .ln.b{stroke:#1446D8}#s14 .ln.g{stroke:#7FA80E}#s14 .ln.s{stroke:#8A96B0;stroke-dasharray:2 10}
+#s14 .fw{fill:none;stroke:#fff;stroke-width:3;stroke-linecap:round;stroke-dasharray:6 34;opacity:.9;animation:flow2 1.6s linear infinite}
+@keyframes flow2{to{stroke-dashoffset:-40}}
+#s14 .nd{position:absolute;transform:translate(-50%,-50%);display:flex;align-items:center;gap:12px;padding:14px 20px;border-radius:22px;background:rgba(255,255,255,.92);border:1px solid #fff;box-shadow:0 16px 34px rgba(20,70,216,.18);font-size:23px;font-weight:800;line-height:1.25;color:var(--navy);white-space:nowrap}
+#s14 .nd small{display:block;font-size:18px;font-weight:500;color:var(--ink2)}
+#s14 .nd .ic{font-style:normal;font-size:30px;width:52px;height:52px;border-radius:16px;display:grid;place-items:center;background:#E4F0FF;flex:none}
+#s14 .nd.c{padding:22px 34px;background:var(--block);color:#fff;font-size:30px;text-align:center;box-shadow:0 22px 46px rgba(20,70,216,.42),0 0 0 8px rgba(255,255,255,.55)}
+#s14 .nd.c small{color:#E8F1FF;font-size:19px}
+#s14 .nd.q .ic{background:#EEF1F6}
+#s14 .lb{position:absolute;transform:translate(-50%,-50%);font-size:20px;font-weight:700;line-height:1.2;white-space:nowrap;padding:7px 14px;border-radius:14px;background:#fff;box-shadow:0 6px 16px rgba(13,31,79,.12);border:2px solid}
+#s14 .lb.b{color:#1446D8;border-color:#1446D8}#s14 .lb.g{color:#4E7300;border-color:#9BC21A;background:#F4FBDF}#s14 .lb.s{color:#46526E;border-color:#B7C0D3}
+#s14 .lg{position:absolute;left:500px;top:24px;transform:translateX(-50%);display:flex;gap:16px;font-size:18px;font-weight:700;color:var(--ink2);white-space:nowrap}
+#s14 .lg i{display:inline-block;width:26px;height:5px;border-radius:3px;margin-right:6px;vertical-align:4px}
+#s14 .lg i.b{background:#1446D8}#s14 .lg i.g{background:#7FA80E}#s14 .lg i.s{background:repeating-linear-gradient(90deg,#8A96B0 0 3px,transparent 3px 8px)}
 #s14 .terms{left:1130px;top:262px;width:694px;height:430px;padding:22px 28px}
 #s14 .tm{display:grid;grid-template-columns:170px 1fr;gap:12px;padding:7px 0;border-top:1px solid var(--line);font-size:21px;line-height:1.35}
 #s14 .tm:first-of-type{border-top:0}
@@ -1133,15 +1136,34 @@ ul.clean li::before{content:"";position:absolute;left:4px;top:.5em;width:14px;he
  <div class="hdr"><span class="pill">Chương 3 · Phương án kinh doanh</span></div>
  <h2 class="ttl"><span class="no">3.3–3.4</span><span class="tx">Hợp đồng mặt bằng và nghĩa vụ tài chính</span></h2>
  <div class="dg fx zoom" style="--d:.2s">
-  <div class="pt a"><small>Bên cho thuê</small><b>Chủ tòa nhà văn phòng</b><span>hoặc chủ đầu tư chung cư</span></div>
-  <div class="pt b"><small>Bên cho thuê</small><b>Ban quản trị chung cư</b><span>theo nghị quyết hội nghị nhà chung cư</span></div>
-  <div class="fl a"><p><i class="up">↑</i><span><b>SLTG trả</b> 5% doanh thu, tối thiểu 5 tr/tháng</span></p><p><i class="dn">↓</i><span><b>Chủ nhà góp</b> mặt bằng và hoàn thiện ≈ 135 tr/điểm</span></p></div>
-  <div class="fl b"><p><i class="up">↑</i><span><b>SLTG trả</b> tiền thuê phần sở hữu chung</span></p><p><i class="eq">→</i><span>Tiền thuê nộp vào <b>quỹ bảo trì</b></span></p></div>
-  <div class="core"><b>SmartLiving Tap &amp; Go</b><span>bên thuê mặt bằng và vận hành điểm bán</span></div>
-  <div class="fl c"><p><i class="dn">↓</i><span><b>SLTG bán</b> hàng 24/7 ngay trong tòa nhà</span></p><p><i class="up">↑</i><span><b>Cư dân trả</b> bằng thẻ hoặc QR, đỡ 7 phút mỗi lần</span></p></div>
-  <div class="fl d"><p><i class="dn">↓</i><span><b>SLTG trả</b> tiền hàng và phí thanh toán</span></p><p><i class="up">↑</i><span><b>Đối tác cấp</b> hàng hóa, ví và cổng thanh toán</span></p></div>
-  <div class="pt c"><small>Khách hàng</small><b>Cư dân, nhân viên văn phòng</b></div>
-  <div class="pt d"><small>Đối tác</small><b>Nhà cung cấp</b><span>ngân hàng, ví điện tử</span></div>
+  <svg viewBox="0 0 1000 700">
+   <defs>
+    <marker id="mB" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#1446D8"/></marker>
+    <marker id="mG" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#5E8A00"/></marker>
+    <marker id="mS" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#56627F"/></marker>
+   </defs>
+   <path class="ln b" d="M430 300 C 360 262, 300 222, 255 150" marker-end="url(#mB)"/>
+   <path class="ln b" d="M570 300 C 640 262, 700 222, 745 150" marker-end="url(#mB)"/>
+   <path class="ln g" d="M110 148 C 100 262, 180 352, 286 354" marker-end="url(#mG)"/>
+   <path class="ln s" d="M905 148 L 905 552" marker-end="url(#mS)"/>
+   <path class="ln b" d="M200 566 C 210 480, 270 432, 342 414" marker-end="url(#mB)"/>
+   <path class="ln g" d="M392 414 C 362 478, 326 528, 300 562" marker-end="url(#mG)"/>
+   <path class="ln s" d="M500 404 L 500 552" marker-start="url(#mS)" marker-end="url(#mS)"/>
+   <path class="fw b" d="M430 300 C 360 262, 300 222, 255 150"/><path class="fw b" d="M570 300 C 640 262, 700 222, 745 150"/><path class="fw g" d="M110 148 C 100 262, 180 352, 286 354"/><path class="fw b" d="M200 566 C 210 480, 270 432, 342 414"/><path class="fw g" d="M392 414 C 362 478, 326 528, 300 562"/>
+  </svg>
+  <div class="lg"><span><i class="b"></i>Dòng tiền</span><span><i class="g"></i>Đóng góp, giá trị</span><span><i class="s"></i>Hàng hóa, quỹ</span></div>
+  <div class="nd" style="left:180px;top:95px"><i class="ic">🏢</i><div>Chủ tòa nhà văn phòng<small>hoặc chủ đầu tư chung cư</small></div></div>
+  <div class="nd" style="left:820px;top:95px"><i class="ic">🏘️</i><div>Ban quản trị chung cư<small>theo hội nghị nhà chung cư</small></div></div>
+  <div class="nd c" style="left:500px;top:352px"><div>SmartLiving Tap &amp; Go<small>bên thuê và vận hành</small></div></div>
+  <div class="nd" style="left:180px;top:610px"><i class="ic">🧑‍🤝‍🧑</i><div>Cư dân, nhân viên</div></div>
+  <div class="nd" style="left:500px;top:610px"><i class="ic">🚚</i><div>Nhà cung cấp<small>ngân hàng, ví điện tử</small></div></div>
+  <div class="nd q" style="left:880px;top:610px"><i class="ic">🛠️</i><div>Quỹ bảo trì<small>phần sở hữu chung</small></div></div>
+  <span class="lb b" style="left:500px;top:208px">Tiền thuê: 5% doanh thu, tối thiểu 5 tr/tháng</span>
+  <span class="lb g" style="left:118px;top:262px">Góp TI ≈ 135 tr/điểm</span>
+  <span class="lb s" style="left:905px;top:350px">Nộp quỹ</span>
+  <span class="lb b" style="left:200px;top:455px">Trả bằng thẻ, QR</span>
+  <span class="lb g" style="left:400px;top:520px">Tiết kiệm 7 phút/lần</span>
+  <span class="lb s" style="left:640px;top:478px">Hàng hóa ⇄ tiền hàng, phí</span>
  </div>
  <div class="box terms fx right" style="--d:.35s"><div class="kick">3.3.2 Điều khoản đề xuất</div>
   <div class="tm"><b>Thời hạn</b><span>5 năm, quyền gia hạn 5 năm</span></div>
