@@ -1052,7 +1052,7 @@ ul.clean li::before{content:"";position:absolute;left:4px;top:.5em;width:14px;he
 #s13 .hs.cur::after{border-color:var(--lime)}
 #s13 .view{position:absolute;left:940px;top:0;width:980px;height:760px;overflow:hidden;z-index:4;background:#0D1F4F;clip-path:polygon(7% 0,100% 0,100% 100%,0 100%)}
 #s13 .view img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .6s ease,transform 4s ease;transform:scale(1.06)}
-#s13 .view img.cur{opacity:1;transform:none}
+#s13 .view img.cur{opacity:1;transform:none}#s13 .view img.cam{object-position:86% 14%;transform-origin:86% 14%;transform:scale(1.75)}#s13 .view img.cam.cur{transform:scale(1.55)}
 #s13 .info{left:940px;top:776px;width:884px;height:186px;padding:20px 28px}
 #s13 .info h3{font-size:28px;margin:0 0 6px}
 #s13 .info p{font-size:23px;line-height:1.4;font-weight:500;color:var(--ink2)}
@@ -1071,7 +1071,7 @@ ul.clean li::before{content:"";position:absolute;left:4px;top:.5em;width:14px;he
   <button type="button" class="hs" style="left:78.6%;top:84%" data-k="4">5</button>
   <button type="button" class="hs" style="left:75.2%;top:42%" data-k="5">6</button>
  </div>
- <div class="view fx zoom" style="--d:.35s"><img class="cur" data-asrc="s3" src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" alt=""><img data-asrc="s1" src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" alt=""><img data-asrc="s4" src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" alt=""><img data-asrc="s9" src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" alt=""><img data-asrc="s2" src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" alt=""><img data-asrc="s5" src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" alt=""></div>
+ <div class="view fx zoom" style="--d:.35s"><img class="cur" data-asrc="s3" src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" alt=""><img data-asrc="s1" src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" alt=""><img data-asrc="s4" src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" alt=""><img data-asrc="s9" src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" alt=""><img data-asrc="s2" src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" alt=""><img data-asrc="s5" src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" alt=""><img class="cam" data-asrc="s9" src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" alt="Camera AI gắn trần"></div>
  <div class="box info fx" style="--d:.5s"><h3 id="s13h">Phối cảnh cắt ngang 6.000 × 5.000 mm</h3><p id="s13p">Sáu khu chức năng: mặt tiền, cổng, kệ, tủ mát, cà phê, camera.</p></div>
  <div class="specs fx" style="--d:.7s"><span class="chip navy">30 m², trần 2,8 m</span><span class="chip">≈ 200 mặt hàng</span><span class="chip">10 camera AI gắn trần</span><span class="chip lime">Mở 24/7</span><span class="chip">1.034 tr/điểm</span></div>
  <template class="note">Đây là bản vẽ mặt bằng KT-01 của một điểm bán, tỷ lệ 1:30, kích thước 6 nhân 5 mét. Nhóm đánh số sáu khu. Số 1 là mặt tiền kính nhìn từ sảnh. Số 2 là hai cổng vào và ra tự động. Số 3 là kệ giữa hai mặt và kệ cảm biến trọng lượng. Số 4 là tủ mát, tủ đông cho đồ uống và đồ ăn sẵn. Số 5 là góc cà phê tự động với hai máy. Số 6 là hệ thống 10 camera AI phủ toàn bộ kệ, nối về phòng kỹ thuật nhỏ chứa máy chủ biên và bộ lưu điện. Tổng vốn một điểm khoảng 1,03 tỷ đồng.</template>
@@ -2146,7 +2146,9 @@ if (tour) {
   const stopAuto = () => { clearInterval(timer); timer = null; ab.setAttribute('aria-pressed', 'false'); ab.textContent = '▶ Tự chạy'; };
   ab.addEventListener('click', e => { e.stopPropagation(); if (timer) return stopAuto(); ab.setAttribute('aria-pressed', 'true'); ab.textContent = '❚❚ Dừng';
     timer = setInterval(() => { if (!tour.classList.contains('active') || curI >= N - 1) return stopAuto(); DECK.go(DECK.cur, curI + 1, true); }, 4600); });
-  hooks.tour = () => { curI = -1; show(+tour.dataset.stepNow || 0); };
+  const startAuto = () => { if (timer || reduced) return; ab.setAttribute('aria-pressed', 'true'); ab.textContent = '❚❚ Dừng';
+    timer = setInterval(() => { if (!tour.classList.contains('active') || curI >= N - 1) return stopAuto(); DECK.go(DECK.cur, curI + 1, true); }, 4600); };
+  hooks.tour = () => { curI = -1; stopAuto(); show(+tour.dataset.stepNow || 0); if ((+tour.dataset.stepNow || 0) < N - 1) setTimeout(() => { if (tour.classList.contains('active')) startAuto(); }, 1200); };
 }
 
 /* hạt sáng nền chung */
