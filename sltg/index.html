@@ -283,14 +283,8 @@ ul.clean li::before{content:"";position:absolute;left:4px;top:.5em;width:14px;he
 #bg .rays,#s1 .rays,#chapfx .rays{background:var(--rays) center/100% 100% no-repeat!important;-webkit-mask-image:none!important;mask-image:none!important;border-radius:0!important}
 #bg .rays{opacity:.7}
 
-/* ===== BÌA TĨNH: chỉ hiệu ứng vào trang, không chuyển động lặp ===== */
+/* bìa chương không tự tắt: bỏ thanh đếm giờ */
 #chapfx .bar{display:none}
-#chapfx .rays,#chapfx .o,#chapfx .isow{animation:none!important}
-#s1 .rays,#s1 .storewrap,#s1 .pcw,#s1 .float,#s1 .glow,#s1 .ring,#s1 .lt .gz,#s1 .sp{animation:none!important}
-#s1 .ring,#s1 .sp{display:none}
-#s1.enter .lt.dot{animation:dotin .9s cubic-bezier(.3,1.7,.5,1) 1.2s both!important}
-#s1 .orbit animateMotion{display:none}
-#s25 .rays,#s25 .qa{animation:none!important}
 
 /* ===== GLASSMORPHISM ===== */
 :root{--gl-bg:linear-gradient(140deg,rgba(255,255,255,.62) 0%,rgba(255,255,255,.30) 100%);--gl-bd:rgba(255,255,255,.75)}
@@ -1882,7 +1876,7 @@ function showChap(ch) {
   const cv = $('canvas', fx), ctx = cv.getContext('2d');
   const P = Array.from({length: 50}, () => ({x: Math.random() * 1920, y: Math.random() * 1080, r: .8 + Math.random() * 2.4, v: .3 + Math.random() * .7, c: Math.random() < .35}));
   cancelAnimationFrame(chRaf);
-  ctx.clearRect(0, 0, 1920, 1080); for (const p of P) { ctx.beginPath(); ctx.arc(p.x, p.y, p.r, 0, 6.283); ctx.fillStyle = p.c ? 'rgba(181,230,29,.85)' : 'rgba(255,255,255,.95)'; ctx.fill(); }
+  (function loop() { if (!fx.classList.contains('go')) return; ctx.clearRect(0, 0, 1920, 1080); for (const p of P) { p.y -= p.v; if (p.y < -10) p.y = 1090; ctx.beginPath(); ctx.arc(p.x, p.y, p.r, 0, 6.283); ctx.fillStyle = p.c ? 'rgba(181,230,29,.85)' : 'rgba(255,255,255,.95)'; ctx.fill(); } chRaf = requestAnimationFrame(loop); })();
 }
 window.showChap = showChap;
 /* khi đang hiện bìa chương: phím/nhấp chỉ đóng bìa, không nhảy qua slide đầu chương */
@@ -1904,7 +1898,7 @@ if (s1) {
   const cv = $('canvas.pt', s1), ctx = cv.getContext('2d');
   const P = Array.from({length: 70}, () => ({x: Math.random() * 1920, y: Math.random() * 1080, r: .8 + Math.random() * 2.6, v: .2 + Math.random() * .7, a: Math.random() * 6.28, c: Math.random() < .25}));
   (function loop() {
-    if (s1.classList.contains('active') && !reduced && !s1._drawn) { s1._drawn = true;
+    if (s1.classList.contains('active') && !reduced) {
       ctx.clearRect(0, 0, 1920, 1080);
       for (const p of P) {
         p.y -= p.v; p.a += .02; p.x += Math.sin(p.a) * .4; if (p.y < -10) { p.y = 1090; p.x = Math.random() * 1920; }
