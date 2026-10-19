@@ -320,12 +320,6 @@ ul.clean li::before{content:"";position:absolute;left:4px;top:.5em;width:14px;he
 #chapfx.go .kk{animation:softFade .8s ease .55s both!important}
 #chapfx.go h2{animation:softRise .9s cubic-bezier(.22,.61,.36,1) .65s both!important}
 #chapfx.go .ln span{animation:softFade .7s ease both!important;animation-delay:calc(.9s + var(--i) * .06s)!important}
-#s1.enter .lt:not(.dot){animation:softDrop 1.1s cubic-bezier(.22,.61,.36,1) both!important;animation-delay:calc(.2s + var(--i) * .12s)!important}
-#s1.enter .lt.dot{animation:softDrop 1s cubic-bezier(.22,.61,.36,1) .8s both,dotpulse 3s ease-in-out 2.2s infinite!important}
-#s1.enter .store{animation:softRise 1.3s cubic-bezier(.22,.61,.36,1) .4s both!important}
-#s1.enter .flash{animation:none!important}
-#s1.enter .pc{animation-name:softRise!important;animation-timing-function:cubic-bezier(.22,.61,.36,1)!important}
-#s1.enter .fx.pop{animation-name:softFade!important}
 
 </style></head>
 <body>
@@ -333,142 +327,115 @@ ul.clean li::before{content:"";position:absolute;left:4px;top:.5em;width:14px;he
 <div id="viewport"><div id="stage">
 <div id="bg"><div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div><div class="blob b4"></div><div class="dots"></div><div class="grid"></div>
 <svg class="sky" viewBox="0 0 2600 330" preserveAspectRatio="none" fill="#1446D8"><rect x="0" y="150" width="120" height="180" rx="4"/><rect x="130" y="80" width="90" height="250" rx="4"/><rect x="230" y="190" width="150" height="140" rx="4"/><rect x="400" y="30" width="80" height="300" rx="4"/><rect x="490" y="120" width="140" height="210" rx="4"/><rect x="650" y="60" width="100" height="270" rx="4"/><rect x="760" y="170" width="170" height="160" rx="4"/><rect x="950" y="10" width="90" height="320" rx="4"/><rect x="1050" y="130" width="130" height="200" rx="4"/><rect x="1200" y="70" width="110" height="260" rx="4"/><rect x="1320" y="180" width="160" height="150" rx="4"/><rect x="1500" y="40" width="90" height="290" rx="4"/><rect x="1600" y="140" width="140" height="190" rx="4"/><rect x="1760" y="90" width="100" height="240" rx="4"/><rect x="1870" y="160" width="180" height="170" rx="4"/><rect x="2060" y="20" width="90" height="310" rx="4"/><rect x="2160" y="130" width="140" height="200" rx="4"/><rect x="2310" y="70" width="110" height="260" rx="4"/><rect x="2430" y="180" width="170" height="150" rx="4"/></svg><i class="bub" style="left:140px;width:26px;height:26px;animation-duration:24s;animation-delay:-3s"></i><i class="bub" style="left:420px;width:14px;height:14px;animation-duration:19s;animation-delay:-9s"></i><i class="bub" style="left:760px;width:34px;height:34px;animation-duration:28s;animation-delay:-14s"></i><i class="bub" style="left:1040px;width:18px;height:18px;animation-duration:22s;animation-delay:-5s"></i><i class="bub" style="left:1330px;width:24px;height:24px;animation-duration:26s;animation-delay:-18s"></i><i class="bub" style="left:1610px;width:12px;height:12px;animation-duration:18s;animation-delay:-2s"></i><i class="bub" style="left:1780px;width:30px;height:30px;animation-duration:30s;animation-delay:-11s"></i><i class="bub" style="left:300px;width:10px;height:10px;animation-duration:16s;animation-delay:-7s"></i><div class="sweep"></div><div class="rays"></div><div class="ring r1"></div><div class="ring r2"></div><canvas id="bgc" width="1920" height="1080"></canvas></div>
-<!-- ===================== 1. BÌA ===================== -->
+<!-- ===================== 1. BÌA: CỬA KÍNH TỰ MỞ ===================== -->
 <style>
-#s1{background:radial-gradient(ellipse 60% 50% at 50% 78%,#FFFFFF 0%,rgba(255,255,255,0) 62%),radial-gradient(ellipse 50% 45% at 50% 30%,rgba(127,212,255,.55) 0%,rgba(127,212,255,0) 70%),linear-gradient(180deg,#A9D8FF 0%,#D2ECFF 45%,#F3FAFF 100%)}
-#s1 .rays{position:absolute;left:960px;top:330px;width:2800px;height:2800px;margin:-1400px 0 0 -1400px;border-radius:50%;background:repeating-conic-gradient(from 0deg,rgba(255,255,255,.8) 0deg 4deg,rgba(255,255,255,0) 4deg 12deg);-webkit-mask-image:radial-gradient(circle,#000 0%,rgba(0,0,0,.55) 22%,transparent 52%);mask-image:radial-gradient(circle,#000 0%,rgba(0,0,0,.55) 22%,transparent 52%);animation:spin 90s linear infinite}
-#s1 .floor{position:absolute;left:-20%;right:-20%;bottom:-8%;height:50%;background-image:linear-gradient(rgba(20,70,216,.2) 2px,transparent 2px),linear-gradient(90deg,rgba(20,70,216,.2) 2px,transparent 2px);background-size:110px 110px;transform:perspective(620px) rotateX(66deg);transform-origin:50% 100%;-webkit-mask-image:linear-gradient(0deg,#000 0%,transparent 80%);mask-image:linear-gradient(0deg,#000 0%,transparent 80%);animation:gridrun 4s linear infinite}
-#s1 canvas.pt{position:absolute;inset:0;z-index:6;pointer-events:none}
-#s1 .lay{position:absolute;inset:0;transition:transform .6s ease-out}
-#s1 .orb{position:absolute;border-radius:50%;background:radial-gradient(circle at 32% 28%,#fff 0 7%,#A9DBFF 20%,#2F7BFF 58%,#1446D8 85%);box-shadow:0 30px 60px rgba(20,70,216,.25),inset -10px -14px 30px rgba(13,31,79,.25)}
-#s1 .orb.lime{background:radial-gradient(circle at 32% 28%,#fff 0 7%,#E8FF9B 22%,#B5E61D 60%,#7FA80E 90%)}
-#s1 .orb.clear{background:radial-gradient(circle at 32% 28%,#fff 0 9%,rgba(210,238,255,.85) 26%,rgba(120,200,255,.45) 62%,rgba(47,123,255,.25) 100%);border:1.5px solid rgba(255,255,255,.85);box-shadow:0 20px 40px rgba(20,70,216,.15)}
-#s1 .orb.big{opacity:.85}
-/* đầu trang */
-#s1 .topbar{position:absolute;left:96px;top:44px;display:flex;gap:24px;align-items:center;z-index:12}
-#s1 .topbar img{height:64px}
-/* chữ bong bóng */
-#s1 .word{position:absolute;left:0;right:0;top:136px;display:flex;justify-content:center;align-items:flex-end;z-index:9;pointer-events:none}
-#s1 .lt{position:relative;display:block;margin:0 -8px;transform-origin:50% 100%;opacity:0}
-#s1 .lt img{display:block;height:258px;width:auto}
-#s1 .lt.dot img{height:104px}
-#s1 .lt.dot{margin:0 0 30px -6px;transform-origin:50% 50%}
-#s1.enter .lt{animation:drop 1.15s cubic-bezier(.3,1.35,.5,1) both;animation-delay:calc(.25s + var(--i) * .16s)}
-#s1.enter .lt.dot{animation:dotin .9s cubic-bezier(.3,1.7,.5,1) 1.2s both,dotpulse 2.4s ease-in-out 2.2s infinite}
-@keyframes drop{0%{opacity:0;transform:translateY(-560px) scaleY(1.15)}55%{opacity:1;transform:translateY(0) scaleY(.8) scaleX(1.12)}75%{transform:translateY(-28px) scaleY(1.05)}100%{opacity:1;transform:none}}
-@keyframes dotin{from{opacity:0;transform:scale(0)}to{opacity:1;transform:none}}
-@keyframes dotpulse{50%{transform:scale(1.14)}}
+#s1{background:#0D1F4F;overflow:hidden;--E:cubic-bezier(.65,0,.2,1)}
+#s1 .ph{position:absolute;inset:-30px;background-size:cover;background-position:50% 46%;transform:scale(1.12);filter:saturate(1.08)}
+#s1.enter .ph{animation:phIn 9s cubic-bezier(.2,.6,.3,1) 1.4s both}
+@keyframes phIn{from{transform:scale(1.12)}to{transform:scale(1.02)}}
+#s1 .tint{position:absolute;inset:0;background:linear-gradient(180deg,rgba(13,31,79,.25) 0%,rgba(13,31,79,0) 30%,rgba(13,31,79,0) 70%,rgba(13,31,79,.45) 100%);pointer-events:none}
+#s1 canvas.pt{position:absolute;inset:0;z-index:2;pointer-events:none;opacity:.7}
+#s1 .lay{position:absolute;inset:0;pointer-events:none}
+/* hai cánh cửa kính */
+#s1 .door{position:absolute;top:0;bottom:0;width:960px;z-index:5;overflow:hidden;
+ background:linear-gradient(160deg,rgba(236,246,255,.86) 0%,rgba(214,234,255,.74) 55%,rgba(196,224,255,.70) 100%);
+ backdrop-filter:blur(24px) saturate(160%);-webkit-backdrop-filter:blur(24px) saturate(160%);transition:none}
+#s1 .door.l{left:0;box-shadow:inset -2px 0 0 rgba(255,255,255,.9),18px 0 50px rgba(13,31,79,.28)}
+#s1 .door.r{left:960px;box-shadow:inset 2px 0 0 rgba(255,255,255,.9),-18px 0 50px rgba(13,31,79,.28)}
+#s1 .door::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(90deg,rgba(255,255,255,0) 0 26px,rgba(255,255,255,.10) 26px 27px);pointer-events:none}
+#s1 .door .sh{position:absolute;top:-10%;bottom:-10%;width:340px;left:-480px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.55),transparent);transform:skewX(-16deg);pointer-events:none}
+#s1.enter .door .sh{animation:sheen 7s ease-in-out 3.6s infinite}
+#s1.enter .door.r .sh{animation-delay:3.95s}
+@keyframes sheen{0%{left:-480px}22%,100%{left:1100px}}
+/* khung nhôm mép cửa */
+#s1 .door .edge{position:absolute;top:0;bottom:0;width:14px;background:linear-gradient(90deg,#9FB3CF,#F4F8FF 45%,#B8C8DE 70%,#7F94B4)}
+#s1 .door.l .edge{right:0}#s1 .door.r .edge{left:0}
+#s1.enter .door.l{animation:openL 1.5s var(--E) 2.05s both}
+#s1.enter .door.r{animation:openR 1.5s var(--E) 2.05s both}
+@keyframes openL{from{transform:none}to{transform:translateX(-150px)}}
+@keyframes openR{from{transform:none}to{transform:translateX(460px)}}
+/* nội dung cánh trái (thấy được: x 0–810) */
+#s1 .L{position:absolute;left:246px;top:84px;bottom:76px;width:640px;display:flex;flex-direction:column}
+#s1 .L .logo{height:58px;width:auto;align-self:flex-start}
+#s1 .L .k{margin-top:88px;font-size:26px;font-weight:600;color:var(--ink2)}
+#s1 .word{display:flex;align-items:flex-end;margin:8px 0 0 -10px;pointer-events:none}
+#s1 .lt{position:relative;display:block;margin:0 -7px;opacity:0}
+#s1 .lt img{display:block;height:196px;width:auto}
+#s1 .lt.dot img{height:80px}#s1 .lt.dot{margin:0 0 22px -4px}
 #s1 .lt .gz{position:absolute;inset:0;-webkit-mask-size:100% 100%;mask-size:100% 100%;background:linear-gradient(105deg,transparent 35%,rgba(255,255,255,.95) 48%,transparent 60%) no-repeat;background-size:260% 100%;background-position:160% 0;mix-blend-mode:screen}
-#s1.enter .lt .gz{animation:glare 4.5s ease-in-out 2.4s infinite;animation-delay:calc(2.4s + var(--i) * .12s)}
+#s1.enter .lt{animation:ltIn 1s cubic-bezier(.22,.61,.36,1) both;animation-delay:calc(2.7s + var(--i) * .1s)}
+#s1.enter .lt .gz{animation:glare 5s ease-in-out infinite;animation-delay:calc(4.4s + var(--i) * .12s)}
+@keyframes ltIn{from{opacity:0;transform:translateY(46px) scale(.92)}to{opacity:1;transform:none}}
 @keyframes glare{0%,55%{background-position:160% 0}100%{background-position:-60% 0}}
-#s1 .sp{position:absolute;width:34px;height:34px;z-index:10;opacity:0;pointer-events:none}
-#s1 .sp::before{content:"";position:absolute;inset:0;background:#fff;clip-path:polygon(50% 0,60% 40%,100% 50%,60% 60%,50% 100%,40% 60%,0 50%,40% 40%);filter:drop-shadow(0 0 6px #fff)}
-#s1.enter .sp{animation:twk 2.6s ease-in-out infinite;animation-delay:var(--d)}
-@keyframes twk{0%,100%{opacity:0;transform:scale(.3) rotate(0)}50%{opacity:1;transform:scale(1) rotate(45deg)}}
-/* cửa hàng + quỹ đạo */
-#s1 .halo{position:absolute;left:520px;top:860px;width:880px;height:190px;border-radius:50%;background:radial-gradient(ellipse,rgba(13,42,122,.42) 0%,rgba(20,70,216,.18) 45%,rgba(20,70,216,0) 72%);z-index:6}
-#s1 .glow{position:absolute;left:560px;top:420px;width:800px;height:560px;border-radius:50%;background:radial-gradient(ellipse,rgba(255,255,255,.95) 0%,rgba(255,255,255,0) 65%);z-index:6}
-#s1.enter .glow{animation:glowp 4s ease-in-out 2s infinite}
-@keyframes glowp{50%{opacity:.55;transform:scale(1.08)}}
-#s1 .orbit{position:absolute;left:0;top:0;width:1920px;height:1080px;z-index:6;overflow:visible;pointer-events:none}
-#s1 .orbit ellipse{fill:none;stroke:rgba(20,70,216,.35);stroke-width:2.5;stroke-dasharray:8 12}
-#s1 .orbit ellipse.o2{stroke:rgba(255,255,255,.9);stroke-dasharray:none;stroke-width:3}
-#s1.enter .orbit{animation:fxZoom 1.2s var(--ease) 1.4s both}
-#s1 .store{position:absolute;left:550px;top:420px;width:820px;z-index:7}
-#s1.enter .store{animation:storein 1.6s cubic-bezier(.2,.9,.25,1) .7s both}
-@keyframes storein{from{opacity:0;transform:translateY(280px) scale(.7) rotate(-4deg)}to{opacity:1;transform:none}}
-#s1 .storewrap{position:absolute;inset:0;z-index:7;animation:flt 7s ease-in-out 2.4s infinite}
-#s1 .ring{position:absolute;left:960px;top:905px;width:200px;height:56px;margin:-28px 0 0 -100px;border-radius:50%;border:3px solid rgba(181,230,29,.95);opacity:0;z-index:6}
-#s1.enter .ring{animation:ringgo 3.2s ease-out 2.2s infinite}
-#s1.enter .ring.r2{animation-delay:3.27s}#s1.enter .ring.r3{animation-delay:4.34s}
-@keyframes ringgo{0%{transform:scale(.4);opacity:1}100%{transform:scale(5.4);opacity:0}}
-/* thẻ ảnh kính */
-#s1 .pc{position:absolute;z-index:8;width:300px;padding:10px 10px 0;border-radius:24px;background:rgba(255,255,255,.55);border:1.5px solid rgba(255,255,255,.95);box-shadow:0 24px 50px rgba(20,70,216,.25),inset 0 1px 0 #fff}
-#s1 .pc img{display:block;width:100%;height:178px;object-fit:cover;border-radius:16px}
-#s1 .pc b{display:flex;align-items:center;gap:8px;padding:10px 6px 12px;font-size:21px;font-weight:800;color:var(--navy)}
-#s1 .pc b::before{content:"";width:12px;height:12px;border-radius:50%;background:var(--lime);box-shadow:0 0 0 4px rgba(181,230,29,.3)}
-#s1 .pc.a{left:96px;top:196px;transform:rotate(-6deg)}
-#s1 .pc.b{right:96px;top:176px;transform:rotate(6deg)}
-#s1.enter .pc{animation:pcin 1.2s cubic-bezier(.2,.9,.25,1) both}
-#s1.enter .pc.a{animation-delay:2s}#s1.enter .pc.b{animation-delay:2.2s}
-@keyframes pcin{from{opacity:0;transform:translateY(60px) rotate(0) scale(.8)}}
-#s1 .pcw{position:absolute;inset:0;z-index:8;animation:flt 8s ease-in-out 3.2s infinite}
-#s1 .pcw.b2{animation-delay:4.4s}
-/* chip */
-#s1 .fchip{position:absolute;z-index:11;display:inline-flex;align-items:center;gap:10px;background:rgba(255,255,255,.88);border:2px solid #fff;border-radius:40px;padding:12px 22px 12px 14px;font-size:23px;font-weight:800;color:var(--navy);box-shadow:0 16px 34px rgba(20,70,216,.22);white-space:nowrap}
-#s1 .fchip i{width:36px;height:36px;border-radius:50%;background:var(--block);display:grid;place-items:center;color:#fff;font-style:normal;font-size:18px}
-#s1 .fchip.l i{background:var(--lime);color:var(--navy)}
-/* chữ hai bên */
-#s1 .left{position:absolute;left:96px;top:586px;width:450px;z-index:12}
-#s1 .left .k{font-size:20px;font-weight:800;letter-spacing:.08em;color:var(--blue);text-transform:uppercase;white-space:nowrap}
-#s1 .left h1{margin:10px 0 0;font-size:62px;line-height:1.04;font-weight:900;letter-spacing:-.02em;color:var(--navy)}
-#s1 .left h1 em{font-style:normal;background:linear-gradient(90deg,#1446D8,#2F7BFF 60%,#3DB4E8);-webkit-background-clip:text;background-clip:text;color:transparent}
-#s1 .left p{margin-top:14px;font-size:25px;line-height:1.42;font-weight:500;color:var(--ink2)}
-#s1 .right{position:absolute;right:96px;top:590px;width:440px;z-index:12;text-align:right}
-#s1 .ava{display:flex;justify-content:flex-end;margin-bottom:14px}
-#s1 .ava img{width:84px;height:84px;border-radius:50%;object-fit:cover;border:4px solid #fff;margin-left:-20px;box-shadow:0 10px 24px rgba(13,31,79,.25)}
-#s1 .right .t{font-size:26px;font-weight:800;color:var(--navy)}
-#s1 .right .s{font-size:22px;font-weight:500;color:var(--ink2);margin-top:6px;line-height:1.4}
-#s1 .right .gv{margin-top:18px;padding-top:16px;border-top:2px solid rgba(20,70,216,.18)}
-#s1 .flash{position:absolute;inset:0;z-index:20;background:#fff;pointer-events:none;opacity:0}
-#s1.enter .flash{animation:flash 1.2s ease .05s both}
-@keyframes flash{0%{opacity:.95}100%{opacity:0}}
+#s1 .L h1{margin:14px 0 0;font-family:'Pop',sans-serif;font-size:54px;line-height:1.05;font-weight:700;letter-spacing:-.015em;color:var(--navy);white-space:nowrap}
+#s1 .L p{margin-top:16px;font-size:27px;line-height:1.45;font-weight:500;color:var(--ink2);max-width:620px}
+#s1 .L .gv{margin-top:auto;padding-top:22px;border-top:2px solid rgba(13,31,79,.14);font-size:22px;line-height:1.45;color:var(--ink2)}
+#s1 .L .gv b{display:block;font-size:25px;font-weight:800;color:var(--navy)}
+/* nội dung cánh phải (thấy được: x 1460–1920 → cục bộ 0–460) */
+#s1 .R{position:absolute;left:44px;top:150px;bottom:76px;width:380px;display:flex;flex-direction:column}
+#s1 .R .t{font-size:26px;font-weight:800;color:var(--navy);line-height:1.25}
+#s1 .ava{display:flex;margin:18px 0 14px 18px}
+#s1 .ava img{width:66px;height:66px;border-radius:50%;object-fit:cover;border:3px solid #fff;margin-left:-16px;box-shadow:0 10px 22px rgba(13,31,79,.22)}
+#s1 .R .s{font-size:22px;line-height:1.5;font-weight:500;color:var(--ink2)}
+#s1 .R .tm{margin-top:auto;font-size:22px;line-height:1.45;color:var(--ink2)}
+#s1 .R .tm b{display:block;font-size:25px;font-weight:800;color:var(--navy)}
+#s1 .L>*,#s1 .R>*{opacity:0}
+#s1.enter .L>*,#s1.enter .R>*{animation:cIn .9s cubic-bezier(.22,.61,.36,1) both}
+#s1.enter .L>*:nth-child(1){animation-delay:2.5s}#s1.enter .L>*:nth-child(2){animation-delay:2.6s}#s1.enter .L>*:nth-child(3){animation:none;opacity:1}
+#s1.enter .L>*:nth-child(4){animation-delay:3.15s}#s1.enter .L>*:nth-child(5){animation-delay:3.3s}#s1.enter .L>*:nth-child(6){animation-delay:3.45s}
+#s1.enter .R>*:nth-child(1){animation-delay:2.9s}#s1.enter .R>*:nth-child(2){animation-delay:3s}#s1.enter .R>*:nth-child(3){animation-delay:3.1s}#s1.enter .R>*:nth-child(4){animation-delay:3.45s}
+@keyframes cIn{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+/* đầu đọc thẻ + tay nắm trên mép cánh phải */
+#s1 .rd{position:absolute;left:40px;top:470px;width:96px;height:150px;border-radius:20px;background:linear-gradient(170deg,#1B2E66,#0D1F4F);box-shadow:0 18px 36px rgba(13,31,79,.35),inset 0 1px 0 rgba(255,255,255,.25);z-index:3}
+#s1 .rd::before{content:"";position:absolute;left:24px;top:30px;width:48px;height:48px;border-radius:50%;border:3px solid rgba(255,255,255,.7);border-left-color:transparent;border-bottom-color:transparent;transform:rotate(45deg)}
+#s1 .rd .led{position:absolute;left:28px;right:28px;bottom:22px;height:8px;border-radius:4px;background:#5CC8F0;box-shadow:0 0 12px #5CC8F0}
+#s1.enter .rd .led{animation:ledOk .3s ease 1.25s both}
+@keyframes ledOk{to{background:#B5E61D;box-shadow:0 0 18px #B5E61D,0 0 40px rgba(181,230,29,.6)}}
+#s1 .rp{position:absolute;left:88px;top:524px;width:60px;height:60px;margin:-30px;border-radius:50%;border:4px solid #B5E61D;opacity:0;z-index:2}
+#s1.enter .rp{animation:rip 1.1s ease-out 1.2s both}#s1.enter .rp.b{animation-delay:1.4s}
+@keyframes rip{0%{opacity:1;transform:scale(.6)}100%{opacity:0;transform:scale(5)}}
+#s1 .hd{position:absolute;left:52px;top:200px;width:12px;height:240px;border-radius:6px;background:linear-gradient(90deg,#8DA2C2,#F6FAFF 50%,#8DA2C2);box-shadow:4px 8px 16px rgba(13,31,79,.25)}
+#s1 .door.r .R{left:160px;top:150px;width:300px}
+/* thẻ ra vào */
+#s1 .card{position:absolute;left:1010px;top:470px;width:250px;height:156px;border-radius:18px;z-index:8;padding:18px 20px;
+ background:linear-gradient(135deg,#2F7BFF 0%,#1446D8 55%,#0D1F4F 100%);box-shadow:0 30px 60px rgba(13,31,79,.45),inset 0 1px 0 rgba(255,255,255,.4);opacity:0}
+#s1 .card img{height:30px;width:auto}
+#s1 .card i{position:absolute;left:20px;bottom:22px;width:44px;height:32px;border-radius:7px;background:linear-gradient(135deg,#E8FF9B,#B5E61D)}
+#s1 .card span{position:absolute;right:20px;bottom:20px;font-size:17px;font-weight:700;color:rgba(255,255,255,.85)}
+#s1.enter .card{animation:cardTap 2.1s cubic-bezier(.3,.7,.2,1) .25s both}
+@keyframes cardTap{0%{opacity:0;transform:translate(420px,360px) rotate(18deg)}40%{opacity:1;transform:translate(-30px,10px) rotate(-6deg)}50%{transform:translate(-44px,4px) rotate(-6deg) scale(.97)}62%{opacity:1;transform:translate(-30px,10px) rotate(-6deg)}100%{opacity:0;transform:translate(260px,520px) rotate(10deg)}}
+@media (prefers-reduced-motion:reduce){#s1 *{animation:none!important}#s1 .door.l{transform:translateX(-150px)}#s1 .door.r{transform:translateX(460px)}#s1 .L>*,#s1 .R>*,#s1 .lt{opacity:1}#s1 .card{display:none}}
 </style>
 <section class="slide" id="s1" data-n="1" data-ch="0" data-title="Bìa: SmartLiving Tap &amp; Go">
- <div class="rays"></div>
- <div class="floor"></div>
+ <div class="ph" style="background-image:url(#A_s1)"></div>
+ <div class="tint"></div>
  <canvas class="pt" width="1920" height="1080"></canvas>
- <div class="lay" data-depth="-16">
-  <div class="orb big" style="left:-120px;top:870px;width:250px;height:250px"></div>
-  <div class="orb clear" style="right:-110px;top:960px;width:220px;height:220px"></div>
-  <div class="orb clear" style="left:600px;top:-80px;width:150px;height:150px"></div>
- </div>
- <div class="lay" data-depth="28">
-  <div class="orb float" style="left:430px;top:470px;width:80px;height:80px"></div>
-  <div class="orb lime float" style="right:430px;top:470px;width:56px;height:56px;animation-delay:-2s"></div>
-  <div class="orb float" style="right:640px;top:60px;width:44px;height:44px;animation-delay:-3s"></div>
-  
- </div>
- <div class="topbar fx" style="--d:.1s"><img data-asrc="logo" src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" alt="Logo SmartLiving Tap &amp; Go"><span class="pill">Nhóm 4 · HP Kinh doanh bất động sản</span></div>
- <div class="lay" data-depth="12" style="z-index:9">
-  <div class="word" aria-label="SLTG">
-   <i class="lt" style="--i:0"><img data-asrc="gls" src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" alt=""><b class="gz"></b></i>
-   <i class="lt" style="--i:1"><img data-asrc="gll" src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" alt=""><b class="gz"></b></i>
-   <i class="lt" style="--i:2"><img data-asrc="glt" src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" alt=""><b class="gz"></b></i>
-   <i class="lt" style="--i:3"><img data-asrc="glg" src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" alt=""><b class="gz"></b></i>
-   <i class="lt dot" style="--i:4"><img data-asrc="gldot" src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" alt=""></i>
+ <div class="door l"><i class="sh"></i><i class="edge"></i>
+  <div class="L">
+   <img class="logo" data-asrc="logo" src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" alt="Logo SmartLiving Tap &amp; Go">
+   <div class="k">Phương án kinh doanh bất động sản</div>
+   <div class="word" aria-label="SLTG">
+    <i class="lt" style="--i:0"><img data-asrc="gls" src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" alt=""><b class="gz"></b></i>
+    <i class="lt" style="--i:1"><img data-asrc="gll" src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" alt=""><b class="gz"></b></i>
+    <i class="lt" style="--i:2"><img data-asrc="glt" src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" alt=""><b class="gz"></b></i>
+    <i class="lt" style="--i:3"><img data-asrc="glg" src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" alt=""><b class="gz"></b></i>
+    <i class="lt dot" style="--i:4"><img data-asrc="gldot" src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" alt=""></i>
+   </div>
+   <h1>SmartLiving Tap &amp; Go</h1>
+   <p>Điểm bán tiện ích không người bán trong chung cư và văn phòng hạng A tại TP.HCM</p>
+   <div class="gv"><b>GVHD: ThS. Nguyễn Chí Nguyên</b>Trường Đại học Kinh tế - Luật, Đại học Quốc gia TP.HCM</div>
   </div>
-  <i class="sp" style="left:540px;top:150px;--d:2.4s"></i><i class="sp" style="left:930px;top:120px;--d:3.1s;width:26px;height:26px"></i><i class="sp" style="left:1330px;top:170px;--d:2.8s"></i><i class="sp" style="left:700px;top:380px;--d:3.6s;width:22px;height:22px"></i><i class="sp" style="left:1180px;top:380px;--d:4s;width:24px;height:24px"></i>
  </div>
- <div class="lay" data-depth="20">
-  <div class="pcw"><div class="pc a"><img data-asrc="s1" src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" alt="Mặt tiền điểm bán"><b>Mặt tiền từ sảnh</b></div></div>
-  <div class="pcw b2"><div class="pc b"><img data-asrc="s5" src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" alt="Góc cà phê tự động"><b>Góc cà phê tự động</b></div></div>
+ <div class="door r"><i class="sh"></i><i class="edge"></i>
+  <i class="hd"></i><div class="rd"><i class="led"></i></div><i class="rp"></i><i class="rp b"></i>
+  <div class="R">
+   <div class="t">5 tòa nhà thí điểm</div>
+   <div class="ava"><img data-asrc="vcp" src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" alt=""><img data-asrc="mtd" src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" alt=""><img data-asrc="gv" src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" alt=""><img data-asrc="nx" src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" alt=""><img data-asrc="s8" src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" alt=""></div>
+   <div class="s">Vinhomes Central Park<br>Masteri Thảo Điền<br>The GoldView<br>The Nexus<br>Viettel Tower</div>
+   <div class="tm"><b>2027–2033</b>Thí điểm trong 7 năm</div>
+  </div>
  </div>
- <div class="glow"></div>
- <div class="halo"></div>
- <svg class="orbit" viewBox="0 0 1920 1080"><ellipse id="orb1" cx="960" cy="810" rx="470" ry="130"/><ellipse class="o2" cx="960" cy="810" rx="505" ry="142" stroke-opacity=".7"/>
-  <circle r="10" fill="#B5E61D" stroke="#fff" stroke-width="3"><animateMotion dur="9s" repeatCount="indefinite" path="M490,810 a470,130 0 1,0 940,0 a470,130 0 1,0 -940,0"/></circle>
-  <circle r="7" fill="#1446D8" stroke="#fff" stroke-width="3"><animateMotion dur="9s" begin="-4.5s" repeatCount="indefinite" path="M490,810 a470,130 0 1,0 940,0 a470,130 0 1,0 -940,0"/></circle></svg>
- <div class="ring"></div><div class="ring r2"></div><div class="ring r3"></div>
- <div class="lay" data-depth="6" style="z-index:7"><div class="storewrap"><img class="store" data-asrc="iso" src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" alt="Phối cảnh cắt ngang điểm bán SmartLiving 30 m²"></div></div>
- <div class="lay" data-depth="18" style="z-index:11">
-  <span class="fchip fx pop" style="left:600px;top:560px;--d:1.9s"><i>1</i>Chạm thẻ để vào</span>
-  <span class="fchip l fx pop" style="left:1110px;top:600px;--d:2.15s"><i>2</i>Lấy hàng rồi đi</span>
-  <span class="fchip fx pop" style="left:1090px;top:965px;--d:2.4s"><i>24</i>Mở cửa 24/7</span>
-  <span class="fchip l fx pop" style="left:610px;top:965px;--d:2.65s"><i>m²</i>Chỉ 30 m² góc sảnh</span>
- </div>
- <div class="left fx left" style="--d:1.5s">
-  <div class="k">Phương án kinh doanh bất động sản</div>
-  <h1>SmartLiving<br><em>Tap &amp; Go</em></h1>
-  <p>Điểm bán tiện ích không người bán<br>trong chung cư và văn phòng<br>hạng A tại TP.HCM</p>
- </div>
- <div class="right fx right" style="--d:1.7s">
-  <div class="ava"><img data-asrc="vcp" src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" alt=""><img data-asrc="mtd" src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" alt=""><img data-asrc="gv" src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" alt=""><img data-asrc="nx" src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" alt=""><img data-asrc="s8" src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" alt=""></div>
-  <div class="t">5 tòa nhà thí điểm, 2027–2033</div>
-  <div class="s">Vinhomes Central Park<br>Masteri Thảo Điền · The GoldView<br>The Nexus · Viettel Tower</div>
-  <div class="gv"><div class="t">GVHD: ThS. Nguyễn Chí Nguyên</div><div class="s">Trường Đại học Kinh tế - Luật<br>Đại học Quốc gia TP.HCM</div></div>
- </div>
- <div class="flash"></div>
+ <div class="card" aria-hidden="true"><img data-asrc="logo_w" src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" alt=""><i></i><span>Tap &amp; Go</span></div>
  <template class="note">Kính chào thầy và các bạn. Nhóm 4 xin trình bày phương án kinh doanh bất động sản SmartLiving Tap &amp; Go, gọi tắt là SLTG. Ý tưởng rất ngắn: thuê những góc sảnh ít dùng trong chung cư và tòa văn phòng hạng A, đặt ở đó một điểm bán không người bán rộng 30 mét vuông, mở cửa 24/7. Cư dân chạm thẻ để vào, lấy hàng rồi đi, hệ thống tự trừ tiền. Giai đoạn thí điểm gồm năm tòa nhà ở TP.HCM. Trong khoảng 20 phút, nhóm sẽ đi qua bốn câu hỏi: vì sao có cơ hội, phương án gồm những gì, có đáng đầu tư không, và thực hiện ra sao.</template>
  <template class="src"><p>Nhóm 4. (2026). <i>SmartLiving Tap &amp; Go: Phương án kinh doanh mặt bằng tiện ích không người bán</i> [Tiểu luận học phần Kinh doanh bất động sản]. Trường Đại học Kinh tế - Luật.</p><p>Ảnh phối cảnh điểm bán: nhóm tự tạo, tách nền để trình chiếu.</p><p>Ảnh tòa nhà: Wikimedia Commons (xem slide 8).</p></template>
 </section>
