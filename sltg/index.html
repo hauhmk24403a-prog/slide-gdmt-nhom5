@@ -1916,31 +1916,128 @@ ul.clean li::before{content:"";position:absolute;left:4px;top:.5em;width:14px;he
 
 <!-- ===================== 25. CẢM ƠN ===================== -->
 <style>
-#s25{background:#071233}
-#s25 .bgp{position:absolute;inset:0;background-size:cover;background-position:center;filter:saturate(1.1) brightness(.5) blur(4px);transform:scale(1.12);transition:transform 12s ease}
-#s25.enter .bgp{transform:scale(1)}
-#s25 .ov{position:absolute;inset:0;background:radial-gradient(ellipse 60% 70% at 50% 50%,rgba(7,18,51,.35),rgba(7,18,51,.92)),linear-gradient(0deg,rgba(13,31,79,.85),rgba(13,31,79,.1) 60%)}
-#s25 .rays{position:absolute;left:50%;top:50%;width:2400px;height:2400px;margin:-1200px 0 0 -1200px;background:repeating-conic-gradient(from 0deg,rgba(120,190,255,.10) 0deg 4deg,transparent 4deg 14deg);-webkit-mask-image:radial-gradient(circle,#000,transparent 55%);mask-image:radial-gradient(circle,#000,transparent 55%);animation:spin 90s linear infinite}
-#s25 .ct{position:absolute;left:0;right:0;top:250px;text-align:center;color:#fff;z-index:3}
-#s25 .ct img{height:120px;filter:drop-shadow(0 0 30px rgba(92,200,240,.6))}
-#s25 .ct h2{margin:40px 0 0;font-size:96px;font-weight:900;letter-spacing:-.02em;line-height:1.1;background:linear-gradient(180deg,#fff,#F2F7FF);-webkit-background-clip:text;background-clip:text;color:transparent}
-#s25 .ct p{margin-top:20px;font-size:34px;font-weight:500;color:#F2F7FF}
-#s25 .qa{display:inline-flex;align-items:center;gap:14px;margin-top:46px;background:var(--lime);color:var(--navy);font-size:32px;font-weight:900;padding:18px 40px;border-radius:50px;box-shadow:0 0 0 0 rgba(181,230,29,.6);animation:qa 2s ease-out infinite}
-@keyframes qa{0%{box-shadow:0 0 0 0 rgba(181,230,29,.55)}100%{box-shadow:0 0 0 30px rgba(181,230,29,0)}}
-#s25 .bt{position:absolute;left:96px;right:96px;bottom:50px;display:flex;justify-content:space-between;color:#C9DCFF;font-size:22px;font-weight:600;z-index:3}
-#s25 canvas{position:absolute;inset:0;z-index:2;pointer-events:none}
+#s25{background:#0D1F4F;overflow:hidden;--E:cubic-bezier(.65,0,.2,1)}
+#s25 .wrap{position:absolute;inset:0}
+#s25.enter .wrap{animation:shake .55s cubic-bezier(.36,.07,.19,.97) 2.55s both}
+@keyframes shake{10%,90%{transform:translate(-2px,1px)}20%,80%{transform:translate(5px,-3px)}30%,50%,70%{transform:translate(-9px,4px)}40%,60%{transform:translate(9px,-4px)}}
+#s25 .ph{position:absolute;inset:-30px;background-size:cover;background-position:50% 46%;transform:scale(1.02)}
+#s25.enter .ph{animation:phOut 3s cubic-bezier(.4,0,.2,1) both}
+@keyframes phOut{from{transform:scale(1.02)}to{transform:scale(1.1)}}
+#s25 .tint{position:absolute;inset:0;background:linear-gradient(180deg,rgba(13,31,79,.25),rgba(13,31,79,0) 30%,rgba(13,31,79,0) 70%,rgba(13,31,79,.45))}
+/* cửa kính: bắt đầu ở trạng thái mở (đúng như cuối bìa) rồi đóng lại */
+#s25 .door{position:absolute;top:0;bottom:0;width:960px;z-index:5;overflow:hidden;
+ background:linear-gradient(160deg,rgba(236,246,255,.88) 0%,rgba(214,234,255,.78) 55%,rgba(196,224,255,.74) 100%);
+ backdrop-filter:blur(24px) saturate(160%);-webkit-backdrop-filter:blur(24px) saturate(160%)}
+#s25 .door.l{left:0;transform:translateX(-150px);box-shadow:inset -2px 0 0 rgba(255,255,255,.9),18px 0 50px rgba(13,31,79,.28)}
+#s25 .door.r{left:960px;transform:translateX(460px);box-shadow:inset 2px 0 0 rgba(255,255,255,.9),-18px 0 50px rgba(13,31,79,.28)}
+#s25 .door::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(90deg,rgba(255,255,255,0) 0 26px,rgba(255,255,255,.10) 26px 27px)}
+#s25 .door .edge{position:absolute;top:0;bottom:0;width:14px;background:linear-gradient(90deg,#9FB3CF,#F4F8FF 45%,#B8C8DE 70%,#7F94B4)}
+#s25 .door.l .edge{right:0}#s25 .door.r .edge{left:0}
+#s25 .door .sh{position:absolute;top:-10%;bottom:-10%;width:340px;left:-480px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.55),transparent);transform:skewX(-16deg)}
+#s25.enter .door .sh{animation:sheen 7s ease-in-out 4.6s infinite}#s25.enter .door.r .sh{animation-delay:4.95s}
+#s25.enter .door.l{animation:closeL 1.05s cubic-bezier(.55,0,.75,.2) 1.5s both}
+#s25.enter .door.r{animation:closeR 1.05s cubic-bezier(.55,0,.75,.2) 1.5s both}
+@keyframes closeL{0%{transform:translateX(-150px)}88%{transform:translateX(6px)}94%{transform:translateX(-4px)}100%{transform:none}}
+@keyframes closeR{0%{transform:translateX(460px)}88%{transform:translateX(-6px)}94%{transform:translateX(4px)}100%{transform:none}}
+/* đầu đọc thẻ ở cổng ra */
+#s25 .rd{position:absolute;left:40px;top:470px;width:96px;height:150px;border-radius:20px;background:linear-gradient(170deg,#1B2E66,#0D1F4F);box-shadow:0 18px 36px rgba(13,31,79,.35),inset 0 1px 0 rgba(255,255,255,.25);z-index:3}
+#s25 .rd::before{content:"";position:absolute;left:24px;top:30px;width:48px;height:48px;border-radius:50%;border:3px solid rgba(255,255,255,.7);border-left-color:transparent;border-bottom-color:transparent;transform:rotate(45deg)}
+#s25 .rd .led{position:absolute;left:28px;right:28px;bottom:22px;height:8px;border-radius:4px;background:#5CC8F0;box-shadow:0 0 12px #5CC8F0}
+#s25.enter .rd .led{animation:ledOk .3s ease 1s both}
+#s25 .rp{position:absolute;left:88px;top:524px;width:60px;height:60px;margin:-30px;border-radius:50%;border:4px solid #B5E61D;opacity:0;z-index:2}
+#s25.enter .rp{animation:rip 1.1s ease-out .95s both}#s25.enter .rp.b{animation-delay:1.15s}
+#s25 .hd{position:absolute;left:52px;top:200px;width:12px;height:240px;border-radius:6px;background:linear-gradient(90deg,#8DA2C2,#F6FAFF 50%,#8DA2C2);box-shadow:4px 8px 16px rgba(13,31,79,.25)}
+#s25 .card{position:absolute;left:1470px;top:470px;width:250px;height:156px;border-radius:18px;z-index:8;padding:18px 20px;
+ background:linear-gradient(135deg,#2F7BFF 0%,#1446D8 55%,#0D1F4F 100%);box-shadow:0 30px 60px rgba(13,31,79,.45),inset 0 1px 0 rgba(255,255,255,.4);opacity:0}
+#s25 .card img{height:30px;width:auto}
+#s25 .card i{position:absolute;left:20px;bottom:22px;width:44px;height:32px;border-radius:7px;background:linear-gradient(135deg,#E8FF9B,#B5E61D)}
+#s25 .card span{position:absolute;right:20px;bottom:20px;font-size:17px;font-weight:700;color:rgba(255,255,255,.85)}
+#s25.enter .card{animation:cardTap 1.9s cubic-bezier(.3,.7,.2,1) 0s both}
+/* cú đóng cửa: khe sáng, sóng xung kích, hạt bung */
+#s25 .seam{position:absolute;left:950px;top:0;bottom:0;width:20px;z-index:7;opacity:0;background:linear-gradient(90deg,transparent,#fff 40%,#fff 60%,transparent);box-shadow:0 0 60px 30px rgba(255,255,255,.9),0 0 160px 80px rgba(127,212,255,.6)}
+#s25.enter .seam{animation:seam 1s ease-out 2.5s both}
+@keyframes seam{0%{opacity:0;transform:scaleX(.3)}12%{opacity:1;transform:scaleX(1.6)}100%{opacity:0;transform:scaleX(4)}}
+#s25 .wave{position:absolute;left:960px;top:540px;width:200px;height:200px;margin:-100px;border-radius:50%;z-index:7;opacity:0;border:6px solid rgba(255,255,255,.95);box-shadow:0 0 40px rgba(127,212,255,.9),inset 0 0 40px rgba(127,212,255,.6)}
+#s25 .wave.b{border-color:rgba(181,230,29,.95);box-shadow:0 0 40px rgba(181,230,29,.8)}
+#s25.enter .wave{animation:wave 1.3s cubic-bezier(.2,.7,.3,1) 2.52s both}#s25.enter .wave.b{animation-delay:2.7s}
+@keyframes wave{0%{opacity:1;transform:scale(.2)}100%{opacity:0;transform:scale(14)}}
+#s25 canvas{position:absolute;inset:0;z-index:9;pointer-events:none}
+#s25.enter .door.r .rd,#s25.enter .door.r .hd{animation:hwOut .5s ease 2.7s both}
+@keyframes hwOut{to{opacity:0;transform:scale(.9)}}
+/* nội dung sau khi cửa đóng */
+#s25 .ct{position:absolute;left:150px;top:150px;width:1060px;z-index:8}
+#s25 .ct .logo{height:62px;opacity:0}
+#s25 .bub{display:flex;align-items:flex-end;margin:20px 0 0 -8px;font-family:'Be Vietnam Pro',sans-serif;font-size:236px;font-weight:900;line-height:1.08;letter-spacing:-.02em}
+#s25 .bub i{position:relative;display:block;font-style:normal;opacity:0;color:transparent;
+ background:linear-gradient(180deg,#B9E4FF 0%,#5AA5FF 38%,#1D5BEA 72%,#1446D8 100%);-webkit-background-clip:text;background-clip:text;
+ -webkit-text-stroke:4px rgba(255,255,255,.92);filter:drop-shadow(0 6px 0 rgba(13,42,122,.18)) drop-shadow(0 26px 34px rgba(20,70,216,.35))}
+#s25 .bub i::after{content:attr(data-t);position:absolute;inset:0;color:transparent;-webkit-text-stroke:0;
+ background:linear-gradient(105deg,transparent 38%,rgba(255,255,255,.95) 48%,transparent 58%) no-repeat;background-size:260% 100%;background-position:160% 0;-webkit-background-clip:text;background-clip:text}
+#s25 .bub i.sp{width:60px}
+#s25 .bub b{display:block;width:62px;height:62px;margin:0 0 40px 10px;border-radius:50%;opacity:0;background:radial-gradient(circle at 35% 30%,#F4FFC8 0%,#C8F03A 35%,#8DBB12 100%);box-shadow:0 14px 26px rgba(110,150,10,.35),inset -4px -6px 10px rgba(0,0,0,.12)}
+#s25.enter .bub i{animation:popL .9s cubic-bezier(.34,1.56,.64,1) both;animation-delay:calc(2.75s + var(--i) * .09s)}
+#s25.enter .bub i::after{animation:glare 5s ease-in-out infinite;animation-delay:calc(4.3s + var(--i) * .12s)}
+#s25.enter .bub b{animation:dotIn .8s cubic-bezier(.34,1.8,.64,1) 3.35s both}
+@keyframes popL{0%{opacity:0;transform:translateY(-120px) scale(.6) rotate(-8deg)}60%{opacity:1;transform:translateY(10px) scale(1.06,.94)}100%{opacity:1;transform:none}}
+@keyframes dotIn{0%{opacity:0;transform:translateY(-300px)}55%{opacity:1;transform:translateY(0) scale(1.15,.85)}75%{transform:translateY(-40px)}100%{opacity:1;transform:none}}
+#s25 .ct h2{margin:6px 0 0;font-family:'Pop',sans-serif;font-size:58px;font-weight:700;line-height:1.12;color:var(--navy);letter-spacing:-.015em;opacity:0}
+#s25 .ct p{margin-top:18px;font-size:30px;font-weight:500;color:var(--ink2);opacity:0}
+#s25 .qa{display:inline-flex;align-items:center;gap:16px;margin-top:40px;background:var(--navy);color:#fff;font-size:34px;font-weight:800;padding:20px 44px 20px 30px;border-radius:60px;box-shadow:0 20px 40px -10px rgba(13,31,79,.5);opacity:0;position:relative}
+#s25 .qa i{width:22px;height:22px;border-radius:50%;background:var(--lime);box-shadow:0 0 0 0 rgba(181,230,29,.8)}
+#s25.enter .qa i{animation:ping 1.6s ease-out 4.6s infinite}
+#s25.enter .ct .logo{animation:cIn .8s cubic-bezier(.22,.61,.36,1) 2.7s both}
+#s25.enter .ct h2{animation:cIn .9s cubic-bezier(.22,.61,.36,1) 3.55s both}
+#s25.enter .ct p{animation:cIn .9s cubic-bezier(.22,.61,.36,1) 3.75s both}
+#s25.enter .qa{animation:qaIn .9s cubic-bezier(.34,1.56,.64,1) 4s both}
+@keyframes qaIn{from{opacity:0;transform:scale(.5)}to{opacity:1;transform:none}}
+/* hóa đơn in ra */
+#s25 .pr{position:absolute;left:1330px;top:96px;width:470px;z-index:8;opacity:0}
+#s25.enter .pr{animation:cIn .7s cubic-bezier(.22,.61,.36,1) 2.75s both}
+#s25 .pr .slot{position:relative;height:46px;border-radius:16px;background:linear-gradient(180deg,#22397A,#0D1F4F);box-shadow:0 16px 30px -8px rgba(13,31,79,.5),inset 0 1px 0 rgba(255,255,255,.25);z-index:2}
+#s25 .pr .slot::after{content:"";position:absolute;left:26px;right:26px;bottom:12px;height:6px;border-radius:3px;background:#050C22}
+#s25 .pr .slot i{position:absolute;right:20px;top:12px;width:10px;height:10px;border-radius:50%;background:#B5E61D;box-shadow:0 0 10px #B5E61D}
+#s25 .pr .cut{overflow:hidden;margin:-14px 22px 0;padding-bottom:30px}
+#s25 .rc{position:relative;background:#fff;padding:36px 32px 30px;font-family:'Be Vietnam Pro',monospace;color:var(--navy);transform:translateY(-102%);
+ box-shadow:0 30px 50px -20px rgba(13,31,79,.4);-webkit-mask:radial-gradient(circle 11px at 50% 100%,transparent 98%,#000) 0 0/30px 100% repeat-x;mask:radial-gradient(circle 11px at 50% 100%,transparent 98%,#000) 0 0/30px 100% repeat-x;padding-bottom:40px}
+#s25.enter .rc{animation:print 2.2s steps(22,end) 3s both}
+@keyframes print{to{transform:none}}
+#s25 .rc .hd2{display:flex;justify-content:space-between;align-items:center;padding-bottom:14px;border-bottom:2px dashed #C3CFE6}
+#s25 .rc .hd2 img{height:34px}#s25 .rc .hd2 span{font-size:18px;font-weight:700;color:var(--ink2)}
+#s25 .rc ul{list-style:none;margin:14px 0 0;padding:0}
+#s25 .rc li{display:flex;justify-content:space-between;font-size:22px;font-weight:600;line-height:1.75}
+#s25 .rc li b{color:#4E8A00;font-weight:900}
+#s25 .rc .sum{margin-top:12px;padding-top:12px;border-top:2px dashed #C3CFE6}
+#s25 .rc .sum li{font-weight:800}#s25 .rc .sum li span:last-child{color:var(--blue)}
+#s25 .rc .ok{margin-top:16px;text-align:center;font-size:26px;font-weight:900;letter-spacing:.04em;color:var(--navy)}
+#s25 .rc .bc{height:46px;margin-top:12px;background:repeating-linear-gradient(90deg,#0D1F4F 0 3px,transparent 3px 6px,#0D1F4F 6px 7px,transparent 7px 11px,#0D1F4F 11px 15px,transparent 15px 17px)}
+#s25 .bt{position:absolute;left:150px;right:120px;bottom:54px;display:flex;justify-content:space-between;color:var(--ink2);font-size:22px;font-weight:600;z-index:8;opacity:0}
+#s25 .bt b{color:var(--navy)}
+#s25.enter .bt{animation:cIn .8s ease 4.3s both}
+@media (prefers-reduced-motion:reduce){#s25 *{animation:none!important}#s25 .door{transform:none!important}#s25 .ct *,#s25 .bub i,#s25 .bub b,#s25 .pr,#s25 .bt{opacity:1!important}#s25 .rc{transform:none}#s25 .card{display:none}}
 </style>
 <section class="slide" id="s25" data-n="33" data-ch="6" data-title="Cảm ơn">
- <div class="bgp" style="background-image:url(#A_s1)"></div>
- <div class="ov"></div><div class="rays"></div>
- <canvas width="1920" height="1080"></canvas>
+ <div class="wrap">
+ <div class="ph" style="background-image:url(#A_s1)"></div><div class="tint"></div>
+ <div class="door l"><i class="sh"></i><i class="edge"></i></div>
+ <div class="door r"><i class="sh"></i><i class="edge"></i><i class="hd"></i><div class="rd"><i class="led"></i></div><i class="rp"></i><i class="rp b"></i></div>
+ <div class="card" aria-hidden="true"><img data-asrc="logo_w" src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" alt=""><i></i><span>Tap &amp; Go</span></div>
+ <i class="seam"></i><i class="wave"></i><i class="wave b"></i>
  <div class="ct">
-  <img class="fx zoom" style="--d:.2s" data-asrc="logo_w" src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" alt="SLTG">
-  <h2 class="fx blur" style="--d:.45s">Cảm ơn thầy và các bạn<br>đã lắng nghe</h2>
-  <p class="fx" style="--d:.8s">SmartLiving Tap &amp; Go · chạm thẻ, lấy hàng, rời đi</p>
-  <div class="qa fx pop" style="--d:1.1s">Hỏi và đáp</div>
+  <img class="logo" data-asrc="logo" src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" alt="SLTG">
+  <div class="bub" aria-label="Cảm ơn"><i style="--i:0" data-t="C">C</i><i style="--i:1" data-t="ả">ả</i><i style="--i:2" data-t="m">m</i><i class="sp"></i><i style="--i:3" data-t="ơ">ơ</i><i style="--i:4" data-t="n">n</i><b></b></div>
+  <h2>thầy và các bạn đã lắng nghe</h2>
+  <p>SmartLiving Tap &amp; Go · chạm thẻ, lấy hàng, rời đi</p>
+  <div class="qa"><i></i>Mời thầy và các bạn đặt câu hỏi</div>
  </div>
- <div class="bt fx" style="--d:1.3s"><span>Nhóm 4 · HP Kinh doanh bất động sản</span><span>GVHD: ThS. Nguyễn Chí Nguyên</span></div>
+ <div class="pr" aria-hidden="true"><div class="slot"><i></i></div><div class="cut"><div class="rc">
+  <div class="hd2"><img data-asrc="logo" src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" alt=""><span>Hóa đơn · Nhóm 4</span></div>
+  <ul><li><span>Mở đầu</span><b>✓</b></li><li><span>Cơ sở lý thuyết</span><b>✓</b></li><li><span>Lựa chọn phương án</span><b>✓</b></li><li><span>Phương án kinh doanh</span><b>✓</b></li><li><span>Tổ chức thực hiện</span><b>✓</b></li><li><span>Kết luận, kiến nghị</span><b>✓</b></li></ul>
+  <ul class="sum"><li><span>NPV dự án</span><span>+845 triệu</span></li><li><span>ENPV xã hội</span><span>+4,93 tỷ</span></li><li><span>Thanh toán</span><span>Chạm thẻ</span></li></ul>
+  <div class="ok">CẢM ƠN QUÝ KHÁCH</div><div class="bc"></div>
+ </div></div></div>
+ <div class="bt"><span><b>Nhóm 4</b> · HP Kinh doanh bất động sản</span><span><b>GVHD:</b> ThS. Nguyễn Chí Nguyên</span></div>
+ <canvas width="1920" height="1080"></canvas>
+ </div>
  <template class="note">Phần trình bày của nhóm 4 đến đây là hết. Tóm lại trong một câu: SmartLiving Tap &amp; Go là một cách biến những góc sảnh bỏ trống thành tiện ích có thu nhập, đáng làm thí điểm và cần được kiểm chứng bằng số liệu thật trước khi mở rộng. Nhóm xin cảm ơn thầy và các bạn đã lắng nghe, và rất mong nhận được câu hỏi, góp ý.</template>
 </section>
 
@@ -2355,19 +2452,32 @@ if (k22) {
   hooks.s22 = () => draw(0); draw(0);
 }
 
-/* ===== s25: hạt sáng ===== */
+/* ===== s25: cửa đóng sập, hạt sáng bung ra từ khe cửa ===== */
 const s25 = $('#s25');
 if (s25) {
   const cv = $('canvas', s25), ctx = cv.getContext('2d');
-  const P = Array.from({length: 90}, () => ({x: Math.random() * 1920, y: Math.random() * 1080, r: .6 + Math.random() * 2.4, v: .15 + Math.random() * .5, a: Math.random() * 6.28, c: Math.random() < .3}));
-  (function loop() {
-    if (s25.classList.contains('active') && !reduced) {
-      ctx.clearRect(0, 0, 1920, 1080);
-      for (const p of P) { p.y -= p.v; p.a += .015; p.x += Math.sin(p.a) * .3; if (p.y < -10) { p.y = 1090; p.x = Math.random() * 1920; }
-        ctx.beginPath(); ctx.arc(p.x, p.y, p.r, 0, 6.283); ctx.fillStyle = p.c ? 'rgba(181,230,29,.9)' : 'rgba(160,215,255,.85)'; ctx.shadowColor = p.c ? '#B5E61D' : '#5CC8F0'; ctx.shadowBlur = 12; ctx.fill(); }
-    }
-    requestAnimationFrame(loop);
-  })();
+  const COL = ['#B5E61D', '#FFFFFF', '#7FD4FF', '#4E8DFF', '#E8FF9B'];
+  let P = [], t0 = 0, burst = false, raf = 0;
+  const spawn = () => {
+    P = [];
+    for (let i = 0; i < 220; i++) { const y = Math.random() * 1080, dir = Math.random() < .5 ? -1 : 1, sp = 6 + Math.random() * 22;
+      P.push({x: 960 + (Math.random() - .5) * 20, y, vx: dir * sp * (.4 + Math.random()), vy: (Math.random() - .5) * 10 - 3, r: 2 + Math.random() * 5, c: COL[i % COL.length], life: 1, d: .006 + Math.random() * .012, sq: Math.random() < .45, rot: Math.random() * 6.28, vr: (Math.random() - .5) * .4}); }
+    for (let i = 0; i < 70; i++) { const a = Math.random() * 6.283, sp = 4 + Math.random() * 16;
+      P.push({x: 960, y: 540, vx: Math.cos(a) * sp, vy: Math.sin(a) * sp, r: 2 + Math.random() * 4, c: COL[i % COL.length], life: 1, d: .008 + Math.random() * .01, sq: false, rot: 0, vr: 0}); }
+  };
+  const loop = t => {
+    if (!s25.classList.contains('active')) { ctx.clearRect(0, 0, 1920, 1080); raf = 0; return; }
+    raf = requestAnimationFrame(loop);
+    if (!burst && t - t0 > 2520) { burst = true; spawn(); }
+    ctx.clearRect(0, 0, 1920, 1080);
+    for (const p of P) { if (p.life <= 0) continue;
+      p.x += p.vx; p.y += p.vy; p.vx *= .965; p.vy = p.vy * .965 + .28; p.rot += p.vr; p.life -= p.d;
+      ctx.globalAlpha = Math.max(0, Math.min(1, p.life * 1.4)); ctx.fillStyle = p.c;
+      if (p.sq) { ctx.save(); ctx.translate(p.x, p.y); ctx.rotate(p.rot); ctx.fillRect(-p.r, -p.r * .5, p.r * 2.2, p.r); ctx.restore(); }
+      else { ctx.beginPath(); ctx.arc(p.x, p.y, p.r, 0, 6.283); ctx.fill(); } }
+    ctx.globalAlpha = 1;
+  };
+  hooks.s25 = () => { if (reduced) return; P = []; burst = false; t0 = performance.now(); if (!raf) raf = requestAnimationFrame(loop); };
 }
 
 /* ===== THAM QUAN ===== */
