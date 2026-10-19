@@ -423,7 +423,7 @@ ul.clean li::before{content:"";position:absolute;left:4px;top:.5em;width:14px;he
    </div>
    <h1>SmartLiving Tap &amp; Go</h1>
    <p>Điểm bán tiện ích không người bán trong chung cư và văn phòng hạng A tại TP.HCM</p>
-   <div class="gv"><b>GVHD: ThS. Nguyễn Chí Nguyên</b>Trường Đại học Kinh tế - Luật, Đại học Quốc gia TP.HCM</div>
+   <div class="gv"><b>GVHD: ThS. Nguyễn Chí Nguyên</b>Trường Đại học Kinh tế - Luật, ĐHQG-HCM</div>
   </div>
  </div>
  <div class="door r"><i class="sh"></i><i class="edge"></i>
@@ -437,7 +437,68 @@ ul.clean li::before{content:"";position:absolute;left:4px;top:.5em;width:14px;he
  </div>
  <div class="card" aria-hidden="true"><img data-asrc="logo_w" src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" alt=""><i></i><span>Tap &amp; Go</span></div>
  <template class="note">Kính chào thầy và các bạn. Nhóm 4 xin trình bày phương án kinh doanh bất động sản SmartLiving Tap &amp; Go, gọi tắt là SLTG. Ý tưởng rất ngắn: thuê những góc sảnh ít dùng trong chung cư và tòa văn phòng hạng A, đặt ở đó một điểm bán không người bán rộng 30 mét vuông, mở cửa 24/7. Cư dân chạm thẻ để vào, lấy hàng rồi đi, hệ thống tự trừ tiền. Giai đoạn thí điểm gồm năm tòa nhà ở TP.HCM. Trong khoảng 20 phút, nhóm sẽ đi qua bốn câu hỏi: vì sao có cơ hội, phương án gồm những gì, có đáng đầu tư không, và thực hiện ra sao.</template>
- <template class="src"><p>Nhóm 4. (2026). <i>SmartLiving Tap &amp; Go: Phương án kinh doanh mặt bằng tiện ích không người bán</i> [Tiểu luận học phần Kinh doanh bất động sản]. Trường Đại học Kinh tế - Luật.</p><p>Ảnh phối cảnh điểm bán: nhóm tự tạo, tách nền để trình chiếu.</p><p>Ảnh tòa nhà: Wikimedia Commons (xem slide 8).</p></template>
+ <template class="src"><p>Nhóm 4. (2026). <i>SmartLiving Tap &amp; Go: Phương án kinh doanh mặt bằng tiện ích không người bán</i> [Tiểu luận học phần Kinh doanh bất động sản]. Trường Đại học Kinh tế - Luật.</p><p>Ảnh phối cảnh điểm bán: nhóm tự tạo, tách nền để trình chiếu.</p><p>Ảnh tòa nhà: Wikimedia Commons (xem slide 9).</p></template>
+</section>
+
+
+<!-- ===================== 1b. PHỐI CẢNH ĐIỂM BÁN ===================== -->
+<style>
+#s1b{background:radial-gradient(ellipse 60% 50% at 50% 78%,#FFFFFF 0%,rgba(255,255,255,0) 62%),radial-gradient(ellipse 50% 45% at 50% 30%,rgba(127,212,255,.55) 0%,rgba(127,212,255,0) 70%),linear-gradient(180deg,#A9D8FF 0%,#D2ECFF 45%,#F3FAFF 100%)}
+#s1b .rays{position:absolute;left:960px;top:330px;width:2800px;height:2800px;margin:-1400px 0 0 -1400px;border-radius:50%;background:repeating-conic-gradient(from 0deg,rgba(255,255,255,.8) 0deg 4deg,rgba(255,255,255,0) 4deg 12deg);-webkit-mask-image:radial-gradient(circle,#000 0%,rgba(0,0,0,.55) 22%,transparent 52%);mask-image:radial-gradient(circle,#000 0%,rgba(0,0,0,.55) 22%,transparent 52%);animation:spin 90s linear infinite}
+#s1b .floor{position:absolute;left:-20%;right:-20%;bottom:-8%;height:50%;background-image:linear-gradient(rgba(20,70,216,.2) 2px,transparent 2px),linear-gradient(90deg,rgba(20,70,216,.2) 2px,transparent 2px);background-size:110px 110px;transform:perspective(620px) rotateX(66deg);transform-origin:50% 100%;-webkit-mask-image:linear-gradient(0deg,#000 0%,transparent 80%);mask-image:linear-gradient(0deg,#000 0%,transparent 80%);animation:gridrun 4s linear infinite}
+#s1b canvas.pt{position:absolute;inset:0;z-index:6;pointer-events:none}
+#s1b .lay{position:absolute;inset:0;transition:transform .6s ease-out}
+#s1b .orb{position:absolute;border-radius:50%;background:radial-gradient(circle at 32% 28%,#fff 0 7%,#A9DBFF 20%,#2F7BFF 58%,#1446D8 85%);box-shadow:0 30px 60px rgba(20,70,216,.25),inset -10px -14px 30px rgba(13,31,79,.25)}
+#s1b .orb.lime{background:radial-gradient(circle at 32% 28%,#fff 0 7%,#E8FF9B 22%,#B5E61D 60%,#7FA80E 90%)}
+#s1b .orb.clear{background:radial-gradient(circle at 32% 28%,#fff 0 9%,rgba(210,238,255,.85) 26%,rgba(120,200,255,.45) 62%,rgba(47,123,255,.25) 100%);border:1.5px solid rgba(255,255,255,.85);box-shadow:0 20px 40px rgba(20,70,216,.15)}
+#s1b .orb.big{opacity:.85}
+#s1b .sp{position:absolute;width:34px;height:34px;z-index:10;opacity:0;pointer-events:none}
+#s1b .sp::before{content:"";position:absolute;inset:0;background:#fff;clip-path:polygon(50% 0,60% 40%,100% 50%,60% 60%,50% 100%,40% 60%,0 50%,40% 40%);filter:drop-shadow(0 0 6px #fff)}
+#s1b.enter .sp{animation:twk 2.6s ease-in-out infinite;animation-delay:var(--d)}
+@keyframes twk{0%,100%{opacity:0;transform:scale(.3) rotate(0)}50%{opacity:1;transform:scale(1) rotate(45deg)}}
+#s1b .halo{position:absolute;left:330px;top:880px;width:1260px;height:230px;border-radius:50%;background:radial-gradient(ellipse,rgba(13,42,122,.42) 0%,rgba(20,70,216,.18) 45%,rgba(20,70,216,0) 72%);z-index:6}
+#s1b .glow{position:absolute;left:360px;top:180px;width:1200px;height:820px;border-radius:50%;background:radial-gradient(ellipse,rgba(255,255,255,.95) 0%,rgba(255,255,255,0) 65%);z-index:6}
+#s1b.enter .glow{animation:glowp 4s ease-in-out 2s infinite}
+@keyframes glowp{50%{opacity:.55;transform:scale(1.08)}}
+#s1b .orbit{position:absolute;left:0;top:0;width:1920px;height:1080px;z-index:6;overflow:visible;pointer-events:none}
+#s1b .orbit ellipse{fill:none;stroke:rgba(20,70,216,.35);stroke-width:2.5;stroke-dasharray:8 12}
+#s1b .orbit ellipse.o2{stroke:rgba(255,255,255,.9);stroke-dasharray:none;stroke-width:3}
+#s1b.enter .orbit{animation:fxZoom 1.2s var(--ease) .8s both}
+#s1b .store{position:absolute;left:330px;top:150px;width:1260px;z-index:7;filter:drop-shadow(0 50px 60px rgba(13,31,79,.28))}
+#s1b.enter .store{animation:storein 1.4s cubic-bezier(.22,.61,.36,1) .15s both}
+@keyframes storein{from{opacity:0;transform:translateY(160px) scale(.86)}to{opacity:1;transform:none}}
+#s1b .storewrap{position:absolute;inset:0;z-index:7;animation:flt 7s ease-in-out 2.4s infinite}
+#s1b .ring{position:absolute;left:960px;top:960px;width:260px;height:70px;margin:-35px 0 0 -130px;border-radius:50%;border:3px solid rgba(181,230,29,.95);opacity:0;z-index:6}
+#s1b.enter .ring{animation:ringgo 3.2s ease-out 1.4s infinite}
+#s1b.enter .ring.r2{animation-delay:2.47s}#s1b.enter .ring.r3{animation-delay:3.54s}
+@keyframes ringgo{0%{transform:scale(.4);opacity:1}100%{transform:scale(6);opacity:0}}
+#s1b .flash{position:absolute;inset:0;z-index:20;background:#fff;pointer-events:none;opacity:0}
+
+@keyframes flash{0%{opacity:.95}100%{opacity:0}}
+</style>
+<section class="slide" id="s1b" data-n="2" data-ch="0" data-title="Phối cảnh điểm bán">
+ <div class="rays"></div>
+ <div class="floor"></div>
+ <canvas class="pt" width="1920" height="1080"></canvas>
+ <div class="lay" data-depth="-16">
+  <div class="orb big" style="left:-120px;top:820px;width:260px;height:260px"></div>
+  <div class="orb clear" style="right:-110px;top:900px;width:240px;height:240px"></div>
+  <div class="orb clear" style="left:180px;top:120px;width:140px;height:140px"></div>
+ </div>
+ <div class="lay" data-depth="28">
+  <div class="orb float" style="left:200px;top:520px;width:84px;height:84px"></div>
+  <div class="orb lime float" style="right:220px;top:420px;width:60px;height:60px;animation-delay:-2s"></div>
+  <div class="orb float" style="right:300px;top:110px;width:46px;height:46px;animation-delay:-3s"></div>
+ </div>
+ <div class="glow"></div>
+ <div class="halo"></div>
+ <svg class="orbit" viewBox="0 0 1920 1080"><ellipse cx="960" cy="900" rx="700" ry="150"/><ellipse class="o2" cx="960" cy="900" rx="745" ry="162" stroke-opacity=".7"/>
+  <circle r="11" fill="#B5E61D" stroke="#fff" stroke-width="3"><animateMotion dur="11s" repeatCount="indefinite" path="M260,900 a700,150 0 1,0 1400,0 a700,150 0 1,0 -1400,0"/></circle>
+  <circle r="8" fill="#1446D8" stroke="#fff" stroke-width="3"><animateMotion dur="11s" begin="-5.5s" repeatCount="indefinite" path="M260,900 a700,150 0 1,0 1400,0 a700,150 0 1,0 -1400,0"/></circle></svg>
+ <div class="ring"></div><div class="ring r2"></div><div class="ring r3"></div>
+ <div class="lay" data-depth="6" style="z-index:7"><div class="storewrap"><img class="store" data-asrc="iso" src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" alt="Phối cảnh cắt ngang điểm bán SmartLiving 30 m²"></div></div>
+ <template class="note">Đây là toàn cảnh một điểm bán SLTG: 30 mét vuông đặt ở góc sảnh, có cổng chạm thẻ, kệ hàng, tủ mát và góc cà phê tự động. Ngay sau đây, mời thầy và các bạn đi một vòng tham quan từng góc.</template>
+ <template class="src"><p>Ảnh phối cảnh điểm bán: nhóm tự tạo, tách nền để trình chiếu.</p></template>
 </section>
 
 
@@ -485,8 +546,8 @@ ul.clean li::before{content:"";position:absolute;left:4px;top:.5em;width:14px;he
 #tour .prog{background:rgba(7,18,51,.6)}
 #tour .prog span{color:#fff}
 </style>
-<section class="slide" id="tour" data-n="2" data-ch="0" data-title="Tham quan một điểm bán SLTG">
- <div class="prog"><span class="ln"><i></i></span><span>02 / 26</span></div>
+<section class="slide" id="tour" data-n="3" data-ch="0" data-title="Tham quan một điểm bán SLTG">
+ <div class="prog"><span class="ln"><i></i></span><span>03 / 27</span></div>
  <div class="tv" id="tourv"></div>
  <div class="leak"></div>
  <div class="scrim"></div>
@@ -519,8 +580,8 @@ ul.clean li::before{content:"";position:absolute;left:4px;top:.5em;width:14px;he
 #s2 .c:nth-child(1){height:430px}#s2 .c:nth-child(2){height:480px}#s2 .c:nth-child(3){height:530px}#s2 .c:nth-child(4){height:620px}#s2 .c:nth-child(5){height:530px}#s2 .c:nth-child(6){height:480px}
 #s2 .mini{position:absolute;right:80px;top:96px;width:470px;z-index:3;filter:drop-shadow(0 30px 30px rgba(13,31,79,.25))}
 </style>
-<section class="slide" id="s2" data-n="3" data-ch="0" data-title="Nội dung trình bày">
- <div class="prog"><span class="ln"><i></i></span><span>03 / 26</span></div>
+<section class="slide" id="s2" data-n="4" data-ch="0" data-title="Nội dung trình bày">
+ <div class="prog"><span class="ln"><i></i></span><span>04 / 27</span></div>
  <div class="deco" aria-hidden="true"><div class="iso" style="right:-110px;bottom:-70px;width:540px"><img data-asrc="iso" src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" alt=""></div><i class="gl " style="right:300px;top:-30px;width:80px;height:80px;--gd:0.25s"></i><i class="gl glime" style="left:30px;bottom:120px;width:46px;height:46px;--gd:0.40s"></i><i class="gl gclear" style="right:600px;bottom:24px;width:70px;height:70px;--gd:0.55s"></i><i class="gl gsoft" style="left:44%;top:-70px;width:120px;height:120px;--gd:0.70s"></i></div>
  <div class="hdr"><span class="pill">SmartLiving Tap &amp; Go</span></div>
  <h2 class="ttl"><span class="tx">Nội dung trình bày</span></h2>
@@ -550,8 +611,8 @@ ul.clean li::before{content:"";position:absolute;left:4px;top:.5em;width:14px;he
 #s3 .cmp .tg.l{left:120px}
 #s3 .foot{display:none}#s3 .ccap{position:absolute;left:1060px;top:1000px;width:800px;display:flex;justify-content:space-between;align-items:center;z-index:6;padding:12px 22px;border-radius:30px;background:rgba(7,18,51,.78);backdrop-filter:blur(8px)}#s3 .ccap .hint,#s3 .ccap .cap{color:#fff}
 </style>
-<section class="slide" id="s3" data-n="4" data-ch="1" data-title="1. Tính cấp thiết của đề tài">
- <div class="prog"><span class="ln"><i></i></span><span>04 / 26</span></div>
+<section class="slide" id="s3" data-n="5" data-ch="1" data-title="1. Tính cấp thiết của đề tài">
+ <div class="prog"><span class="ln"><i></i></span><span>05 / 27</span></div>
  <div class="deco" aria-hidden="true"><div class="iso" style="left:-120px;bottom:-80px;width:500px;transform:scaleX(-1)"><img data-asrc="iso" src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" alt=""></div><i class="gl glime" style="right:40px;top:300px;width:50px;height:50px;--gd:0.25s"></i><i class="gl " style="right:40px;bottom:180px;width:90px;height:90px;--gd:0.40s"></i><i class="gl gclear" style="left:520px;bottom:20px;width:60px;height:60px;--gd:0.55s"></i><i class="gl gsoft" style="right:30%;top:-80px;width:140px;height:140px;--gd:0.70s"></i></div>
  <div class="hdr"><span class="pill">Mở đầu</span></div>
  <h2 class="ttl"><span class="no">1.</span><span class="tx">Tính cấp thiết của đề tài</span></h2>
@@ -594,8 +655,8 @@ ul.clean li::before{content:"";position:absolute;left:4px;top:.5em;width:14px;he
 #s4 .fc .bk p{margin-top:18px;font-size:32px;line-height:1.42;font-weight:600;text-wrap:pretty}
 #s4 .fc .bk .w{margin-top:auto;font-size:21px;font-weight:700;color:#F2F7FF}
 </style>
-<section class="slide" id="s4" data-n="5" data-ch="1" data-title="2–3. Mục tiêu và câu hỏi nghiên cứu">
- <div class="prog"><span class="ln"><i></i></span><span>05 / 26</span></div>
+<section class="slide" id="s4" data-n="6" data-ch="1" data-title="2–3. Mục tiêu và câu hỏi nghiên cứu">
+ <div class="prog"><span class="ln"><i></i></span><span>06 / 27</span></div>
  <div class="deco" aria-hidden="true"><div class="iso" style="right:-140px;top:250px;width:430px"><img data-asrc="iso" src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" alt=""></div><i class="gl " style="left:24px;bottom:150px;width:70px;height:70px;--gd:0.25s"></i><i class="gl glime" style="right:330px;bottom:30px;width:48px;height:48px;--gd:0.40s"></i><i class="gl gclear" style="left:46%;bottom:-24px;width:64px;height:64px;--gd:0.55s"></i><i class="gl gsoft" style="right:18%;top:-60px;width:110px;height:110px;--gd:0.70s"></i></div>
  <div class="hdr"><span class="pill">Mở đầu</span></div>
  <h2 class="ttl"><span class="no">2–3.</span><span class="tx">Mục tiêu và câu hỏi nghiên cứu</span></h2>
@@ -636,8 +697,8 @@ ul.clean li::before{content:"";position:absolute;left:4px;top:.5em;width:14px;he
 #s5 .mean div:last-child{background:var(--block)}
 #s5 .mean b{display:block;font-size:22px;color:#fff;letter-spacing:.06em;text-transform:uppercase;margin-bottom:4px}
 </style>
-<section class="slide" id="s5" data-n="6" data-ch="1" data-title="4–6. Đối tượng, phạm vi, phương pháp và ý nghĩa">
- <div class="prog"><span class="ln"><i></i></span><span>06 / 26</span></div>
+<section class="slide" id="s5" data-n="7" data-ch="1" data-title="4–6. Đối tượng, phạm vi, phương pháp và ý nghĩa">
+ <div class="prog"><span class="ln"><i></i></span><span>07 / 27</span></div>
  <div class="deco" aria-hidden="true"><div class="iso" style="right:-80px;bottom:-110px;width:470px"><img data-asrc="iso" src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" alt=""></div><i class="gl gclear" style="left:-40px;top:320px;width:110px;height:110px;--gd:0.25s"></i><i class="gl glime" style="right:520px;top:-14px;width:44px;height:44px;--gd:0.40s"></i><i class="gl " style="left:38%;bottom:16px;width:56px;height:56px;--gd:0.55s"></i><i class="gl gsoft" style="right:8%;top:-80px;width:150px;height:150px;--gd:0.70s"></i></div>
  <div class="hdr"><span class="pill">Mở đầu</span></div>
  <h2 class="ttl"><span class="no">4–6.</span><span class="tx">Đối tượng, phạm vi, phương pháp và ý nghĩa</span></h2>
@@ -690,8 +751,8 @@ ul.clean li::before{content:"";position:absolute;left:4px;top:.5em;width:14px;he
 #s6 .frame div:nth-child(2){background:var(--blue)}#s6 .frame em{display:block;font-style:normal;font-weight:800;color:#fff;margin-top:2px}#s6 .frame div{height:136px}
 #s6 .fl{position:absolute;left:96px;top:806px;width:590px;height:136px;padding:18px 24px;border-radius:20px;background:rgba(255,255,255,.75);border:2px solid #fff;font-size:23px;line-height:1.4;color:var(--ink);font-weight:500;z-index:5}#s6 .fl b{display:block;color:var(--blue);font-size:24px}
 </style>
-<section class="slide" id="s6" data-n="7" data-ch="2" data-title="1.1–1.9 Cơ sở lý thuyết và khung phân tích">
- <div class="prog"><span class="ln"><i></i></span><span>07 / 26</span></div>
+<section class="slide" id="s6" data-n="8" data-ch="2" data-title="1.1–1.9 Cơ sở lý thuyết và khung phân tích">
+ <div class="prog"><span class="ln"><i></i></span><span>08 / 27</span></div>
  <div class="deco" aria-hidden="true"><div class="iso" style="right:-110px;bottom:-70px;width:540px"><img data-asrc="iso" src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" alt=""></div><i class="gl " style="right:300px;top:-30px;width:80px;height:80px;--gd:0.25s"></i><i class="gl glime" style="left:30px;bottom:120px;width:46px;height:46px;--gd:0.40s"></i><i class="gl gclear" style="right:600px;bottom:24px;width:70px;height:70px;--gd:0.55s"></i><i class="gl gsoft" style="left:44%;top:-70px;width:120px;height:120px;--gd:0.70s"></i></div>
  <div class="hdr"><span class="pill">Chương 1 · Cơ sở lý thuyết</span></div>
  <h2 class="ttl"><span class="no">1.1–1.9</span><span class="tx">Cơ sở lý thuyết và khung phân tích</span></h2>
@@ -745,8 +806,8 @@ ul.clean li::before{content:"";position:absolute;left:4px;top:.5em;width:14px;he
 #s7 .badge{position:absolute;right:30px;top:90px;width:132px;height:132px;border-radius:50%;background:var(--lime);color:var(--navy);display:grid;place-items:center;text-align:center;font-size:20px;font-weight:800;line-height:1.1;box-shadow:0 14px 30px rgba(127,168,14,.4)}
 #s7 .badge b{font-size:44px;display:block}
 </style>
-<section class="slide" id="s7" data-n="8" data-ch="3" data-title="2.1–2.3 Nhu cầu, giá thuê và cấu trúc chi phí">
- <div class="prog"><span class="ln"><i></i></span><span>08 / 26</span></div>
+<section class="slide" id="s7" data-n="9" data-ch="3" data-title="2.1–2.3 Nhu cầu, giá thuê và cấu trúc chi phí">
+ <div class="prog"><span class="ln"><i></i></span><span>09 / 27</span></div>
  <div class="deco" aria-hidden="true"><div class="iso" style="left:-120px;bottom:-80px;width:500px;transform:scaleX(-1)"><img data-asrc="iso" src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" alt=""></div><i class="gl glime" style="right:40px;top:300px;width:50px;height:50px;--gd:0.25s"></i><i class="gl " style="right:40px;bottom:180px;width:90px;height:90px;--gd:0.40s"></i><i class="gl gclear" style="left:520px;bottom:20px;width:60px;height:60px;--gd:0.55s"></i><i class="gl gsoft" style="right:30%;top:-80px;width:140px;height:140px;--gd:0.70s"></i></div>
  <div class="hdr"><span class="pill">Chương 2 · Cơ sở lựa chọn phương án</span></div>
  <h2 class="ttl"><span class="no">2.1–2.3</span><span class="tx">Nhu cầu, giá thuê và cấu trúc chi phí</span></h2>
@@ -804,8 +865,8 @@ ul.clean li::before{content:"";position:absolute;left:4px;top:.5em;width:14px;he
 #s8 .sum{position:absolute;left:96px;top:922px;width:1728px;display:flex;gap:16px;align-items:center;z-index:5;font-size:23px;font-weight:600;color:var(--ink2)}
 #s8 .sum .chip{font-size:22px}
 </style>
-<section class="slide" id="s8" data-n="9" data-ch="3" data-title="2.4 Năm tòa nhà cho giai đoạn thí điểm">
- <div class="prog"><span class="ln"><i></i></span><span>09 / 26</span></div>
+<section class="slide" id="s8" data-n="10" data-ch="3" data-title="2.4 Năm tòa nhà cho giai đoạn thí điểm">
+ <div class="prog"><span class="ln"><i></i></span><span>10 / 27</span></div>
  <div class="deco" aria-hidden="true"><div class="iso" style="right:-140px;top:250px;width:430px"><img data-asrc="iso" src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" alt=""></div><i class="gl " style="left:24px;bottom:150px;width:70px;height:70px;--gd:0.25s"></i><i class="gl glime" style="right:330px;bottom:30px;width:48px;height:48px;--gd:0.40s"></i><i class="gl gclear" style="left:46%;bottom:-24px;width:64px;height:64px;--gd:0.55s"></i><i class="gl gsoft" style="right:18%;top:-60px;width:110px;height:110px;--gd:0.70s"></i></div>
  <div class="hdr"><span class="pill">Chương 2 · Cơ sở lựa chọn phương án</span></div>
  <h2 class="ttl"><span class="no">2.4</span><span class="tx">Năm tòa nhà cho giai đoạn thí điểm</span></h2>
@@ -843,8 +904,8 @@ ul.clean li::before{content:"";position:absolute;left:4px;top:.5em;width:14px;he
 #s9 .ow span{display:block;font-size:21px;color:var(--ink2);font-weight:500;line-height:1.36;margin-top:4px}
 #s9 .ow em{display:block;font-style:normal;font-size:21px;color:var(--blue);font-weight:700;margin-top:6px}
 </style>
-<section class="slide" id="s9" data-n="10" data-ch="3" data-title="2.5–2.8 Bài học, pháp lý và động cơ chủ tòa nhà">
- <div class="prog"><span class="ln"><i></i></span><span>10 / 26</span></div>
+<section class="slide" id="s9" data-n="11" data-ch="3" data-title="2.5–2.8 Bài học, pháp lý và động cơ chủ tòa nhà">
+ <div class="prog"><span class="ln"><i></i></span><span>11 / 27</span></div>
  <div class="deco" aria-hidden="true"><div class="iso" style="right:-80px;bottom:-110px;width:470px"><img data-asrc="iso" src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" alt=""></div><i class="gl gclear" style="left:-40px;top:320px;width:110px;height:110px;--gd:0.25s"></i><i class="gl glime" style="right:520px;top:-14px;width:44px;height:44px;--gd:0.40s"></i><i class="gl " style="left:38%;bottom:16px;width:56px;height:56px;--gd:0.55s"></i><i class="gl gsoft" style="right:8%;top:-80px;width:150px;height:150px;--gd:0.70s"></i></div>
  <div class="hdr"><span class="pill">Chương 2 · Cơ sở lựa chọn phương án</span></div>
  <h2 class="ttl"><span class="no">2.5–2.8</span><span class="tx">Bài học, pháp lý và động cơ chủ tòa nhà</span></h2>
@@ -896,8 +957,8 @@ ul.clean li::before{content:"";position:absolute;left:4px;top:.5em;width:14px;he
 #s10 .core{position:absolute;left:0;right:0;top:620px;height:80px;display:flex;align-items:center;gap:18px;padding:0 28px;border-radius:24px;background:var(--lime);color:var(--navy);font-size:24px;font-weight:700;line-height:1.3;box-shadow:0 20px 40px rgba(127,168,14,.35);z-index:3}
 #s10 .core b{flex:none;font-size:26px;background:var(--navy);color:var(--lime);padding:8px 16px;border-radius:14px}
 </style>
-<section class="slide" id="s10" data-n="11" data-ch="3" data-title="2.9–2.10 Ma trận tiêu chí và SWOT">
- <div class="prog"><span class="ln"><i></i></span><span>11 / 26</span></div>
+<section class="slide" id="s10" data-n="12" data-ch="3" data-title="2.9–2.10 Ma trận tiêu chí và SWOT">
+ <div class="prog"><span class="ln"><i></i></span><span>12 / 27</span></div>
  <div class="deco" aria-hidden="true"><div class="iso" style="right:-110px;bottom:-70px;width:540px"><img data-asrc="iso" src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" alt=""></div><i class="gl " style="right:300px;top:-30px;width:80px;height:80px;--gd:0.25s"></i><i class="gl glime" style="left:30px;bottom:120px;width:46px;height:46px;--gd:0.40s"></i><i class="gl gclear" style="right:600px;bottom:24px;width:70px;height:70px;--gd:0.55s"></i><i class="gl gsoft" style="left:44%;top:-70px;width:120px;height:120px;--gd:0.70s"></i></div>
  <div class="hdr"><span class="pill">Chương 2 · Cơ sở lựa chọn phương án</span></div>
  <h2 class="ttl"><span class="no">2.9–2.10</span><span class="tx">Ma trận tiêu chí và phân tích SWOT</span></h2>
@@ -950,8 +1011,8 @@ ul.clean li::before{content:"";position:absolute;left:4px;top:.5em;width:14px;he
 #s11 .st.cur .pg{animation:pg 3.2s linear forwards}
 @keyframes pg{to{width:100%}}
 </style>
-<section class="slide" id="s11" data-n="12" data-ch="4" data-title="3.1.1–3.1.3 Ý tưởng kinh doanh">
- <div class="prog"><span class="ln"><i></i></span><span>12 / 26</span></div>
+<section class="slide" id="s11" data-n="13" data-ch="4" data-title="3.1.1–3.1.3 Ý tưởng kinh doanh">
+ <div class="prog"><span class="ln"><i></i></span><span>13 / 27</span></div>
  <div class="deco" aria-hidden="true"><div class="iso" style="left:-120px;bottom:-80px;width:500px;transform:scaleX(-1)"><img data-asrc="iso" src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" alt=""></div><i class="gl glime" style="right:40px;top:300px;width:50px;height:50px;--gd:0.25s"></i><i class="gl " style="right:40px;bottom:180px;width:90px;height:90px;--gd:0.40s"></i><i class="gl gclear" style="left:520px;bottom:20px;width:60px;height:60px;--gd:0.55s"></i><i class="gl gsoft" style="right:30%;top:-80px;width:140px;height:140px;--gd:0.70s"></i></div>
  <div class="hdr"><span class="pill">Chương 3 · Phương án kinh doanh</span></div>
  <h2 class="ttl"><span class="no">3.1.1–3.1.3</span><span class="tx">Ý tưởng kinh doanh</span></h2>
@@ -1000,8 +1061,8 @@ ul.clean li::before{content:"";position:absolute;left:4px;top:.5em;width:14px;he
 #s12 tr.me td:first-child{border-radius:12px 0 0 12px}#s12 tr.me td:last-child{border-radius:0 12px 12px 0}
 #s12 tr.me td.y{color:var(--lime)}
 </style>
-<section class="slide" id="s12" data-n="13" data-ch="4" data-title="3.1.4–3.1.6 Năm lựa chọn thiết kế và đối thủ">
- <div class="prog"><span class="ln"><i></i></span><span>13 / 26</span></div>
+<section class="slide" id="s12" data-n="14" data-ch="4" data-title="3.1.4–3.1.6 Năm lựa chọn thiết kế và đối thủ">
+ <div class="prog"><span class="ln"><i></i></span><span>14 / 27</span></div>
  <div class="deco" aria-hidden="true"><div class="iso" style="right:-140px;top:250px;width:430px"><img data-asrc="iso" src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" alt=""></div><i class="gl " style="left:24px;bottom:150px;width:70px;height:70px;--gd:0.25s"></i><i class="gl glime" style="right:330px;bottom:30px;width:48px;height:48px;--gd:0.40s"></i><i class="gl gclear" style="left:46%;bottom:-24px;width:64px;height:64px;--gd:0.55s"></i><i class="gl gsoft" style="right:18%;top:-60px;width:110px;height:110px;--gd:0.70s"></i></div>
  <div class="hdr"><span class="pill">Chương 3 · Phương án kinh doanh</span></div>
  <h2 class="ttl"><span class="no">3.1.4–3.1.6</span><span class="tx">Năm lựa chọn thiết kế và đối thủ</span></h2>
@@ -1047,8 +1108,8 @@ ul.clean li::before{content:"";position:absolute;left:4px;top:.5em;width:14px;he
 #s13 .info p{font-size:23px;line-height:1.4;font-weight:500;color:var(--ink2)}
 #s13 .specs{position:absolute;left:96px;top:976px;display:flex;gap:10px;z-index:6}
 </style>
-<section class="slide" id="s13" data-n="14" data-ch="4" data-title="3.2 Mô tả phương án: điểm bán 30 m²">
- <div class="prog"><span class="ln"><i></i></span><span>14 / 26</span></div>
+<section class="slide" id="s13" data-n="15" data-ch="4" data-title="3.2 Mô tả phương án: điểm bán 30 m²">
+ <div class="prog"><span class="ln"><i></i></span><span>15 / 27</span></div>
  <div class="deco" aria-hidden="true"><div class="iso" style="right:-80px;bottom:-110px;width:470px"><img data-asrc="iso" src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" alt=""></div><i class="gl gclear" style="left:-40px;top:320px;width:110px;height:110px;--gd:0.25s"></i><i class="gl glime" style="right:520px;top:-14px;width:44px;height:44px;--gd:0.40s"></i><i class="gl " style="left:38%;bottom:16px;width:56px;height:56px;--gd:0.55s"></i><i class="gl gsoft" style="right:8%;top:-80px;width:150px;height:150px;--gd:0.70s"></i></div>
  <div class="hdr"><span class="pill">Chương 3 · Phương án kinh doanh</span></div>
  <h2 class="ttl"><span class="no">3.2</span><span class="tx">Mô tả phương án</span></h2>
@@ -1097,8 +1158,8 @@ ul.clean li::before{content:"";position:absolute;left:4px;top:.5em;width:14px;he
 #s14 .ob .g b{display:block;font-size:22px;color:var(--lime)}
 #s14 .ob .g span{display:block;font-size:20px;line-height:1.38;font-weight:500;color:#F2F7FF}
 </style>
-<section class="slide" id="s14" data-n="15" data-ch="4" data-title="3.3–3.4 Hợp đồng mặt bằng và nghĩa vụ tài chính">
- <div class="prog"><span class="ln"><i></i></span><span>15 / 26</span></div>
+<section class="slide" id="s14" data-n="16" data-ch="4" data-title="3.3–3.4 Hợp đồng mặt bằng và nghĩa vụ tài chính">
+ <div class="prog"><span class="ln"><i></i></span><span>16 / 27</span></div>
  <div class="deco" aria-hidden="true"><div class="iso" style="right:-110px;bottom:-70px;width:540px"><img data-asrc="iso" src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" alt=""></div><i class="gl " style="right:300px;top:-30px;width:80px;height:80px;--gd:0.25s"></i><i class="gl glime" style="left:30px;bottom:120px;width:46px;height:46px;--gd:0.40s"></i><i class="gl gclear" style="right:600px;bottom:24px;width:70px;height:70px;--gd:0.55s"></i><i class="gl gsoft" style="left:44%;top:-70px;width:120px;height:120px;--gd:0.70s"></i></div>
  <div class="hdr"><span class="pill">Chương 3 · Phương án kinh doanh</span></div>
  <h2 class="ttl"><span class="no">3.3–3.4</span><span class="tx">Hợp đồng mặt bằng và nghĩa vụ tài chính</span></h2>
@@ -1176,8 +1237,8 @@ ul.clean li::before{content:"";position:absolute;left:4px;top:.5em;width:14px;he
 #s15 .sch .st i.p{background:var(--touch)}#s15 .sch .st i.r{background:var(--lime);border-radius:8px 8px 0 0}
 #s15 .sch span{font-size:19px;font-weight:700;color:#F2F7FF}
 </style>
-<section class="slide" id="s15" data-n="16" data-ch="4" data-title="3.5 Vốn đầu tư, nguồn vốn và PMT">
- <div class="prog"><span class="ln"><i></i></span><span>16 / 26</span></div>
+<section class="slide" id="s15" data-n="17" data-ch="4" data-title="3.5 Vốn đầu tư, nguồn vốn và PMT">
+ <div class="prog"><span class="ln"><i></i></span><span>17 / 27</span></div>
  <div class="deco" aria-hidden="true"><div class="iso" style="left:-120px;bottom:-80px;width:500px;transform:scaleX(-1)"><img data-asrc="iso" src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" alt=""></div><i class="gl glime" style="right:40px;top:300px;width:50px;height:50px;--gd:0.25s"></i><i class="gl " style="right:40px;bottom:180px;width:90px;height:90px;--gd:0.40s"></i><i class="gl gclear" style="left:520px;bottom:20px;width:60px;height:60px;--gd:0.55s"></i><i class="gl gsoft" style="right:30%;top:-80px;width:140px;height:140px;--gd:0.70s"></i></div>
  <div class="hdr"><span class="pill">Chương 3 · Phương án kinh doanh</span></div>
  <h2 class="ttl"><span class="no">3.5</span><span class="tx">Vốn đầu tư, nguồn vốn và khoản trả nợ PMT</span></h2>
@@ -1238,8 +1299,8 @@ ul.clean li::before{content:"";position:absolute;left:4px;top:.5em;width:14px;he
 #s16 .nr .c.neg b{bottom:8px;color:var(--red)}
 #s16 .nr span{font-size:19px;font-weight:700;color:var(--ink2);text-align:center;line-height:1.2;padding-top:14px}
 </style>
-<section class="slide" id="s16" data-n="17" data-ch="4" data-title="3.6–3.7 Doanh thu, chi phí và kinh tế một điểm">
- <div class="prog"><span class="ln"><i></i></span><span>17 / 26</span></div>
+<section class="slide" id="s16" data-n="18" data-ch="4" data-title="3.6–3.7 Doanh thu, chi phí và kinh tế một điểm">
+ <div class="prog"><span class="ln"><i></i></span><span>18 / 27</span></div>
  <div class="deco" aria-hidden="true"><div class="iso" style="right:-140px;top:250px;width:430px"><img data-asrc="iso" src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" alt=""></div><i class="gl " style="left:24px;bottom:150px;width:70px;height:70px;--gd:0.25s"></i><i class="gl glime" style="right:330px;bottom:30px;width:48px;height:48px;--gd:0.40s"></i><i class="gl gclear" style="left:46%;bottom:-24px;width:64px;height:64px;--gd:0.55s"></i><i class="gl gsoft" style="right:18%;top:-60px;width:110px;height:110px;--gd:0.70s"></i></div>
  <div class="hdr"><span class="pill">Chương 3 · Phương án kinh doanh</span></div>
  <h2 class="ttl"><span class="no">3.6–3.7</span><span class="tx">Doanh thu, chi phí và kinh tế một điểm</span></h2>
@@ -1298,8 +1359,8 @@ ul.clean li::before{content:"";position:absolute;left:4px;top:.5em;width:14px;he
 #s17 .lgd{display:flex;gap:22px;font-size:20px;font-weight:600;color:var(--ink2);margin-top:-6px}
 #s17 .lgd i{display:inline-block;width:16px;height:16px;border-radius:4px;margin-right:6px;vertical-align:-2px}
 </style>
-<section class="slide" id="s17" data-n="18" data-ch="4" data-title="3.8–3.9 Chi phí vốn, dòng tiền, NPV và IRR">
- <div class="prog"><span class="ln"><i></i></span><span>18 / 26</span></div>
+<section class="slide" id="s17" data-n="19" data-ch="4" data-title="3.8–3.9 Chi phí vốn, dòng tiền, NPV và IRR">
+ <div class="prog"><span class="ln"><i></i></span><span>19 / 27</span></div>
  <div class="deco" aria-hidden="true"><div class="iso" style="right:-80px;bottom:-110px;width:470px"><img data-asrc="iso" src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" alt=""></div><i class="gl gclear" style="left:-40px;top:320px;width:110px;height:110px;--gd:0.25s"></i><i class="gl glime" style="right:520px;top:-14px;width:44px;height:44px;--gd:0.40s"></i><i class="gl " style="left:38%;bottom:16px;width:56px;height:56px;--gd:0.55s"></i><i class="gl gsoft" style="right:8%;top:-80px;width:150px;height:150px;--gd:0.70s"></i></div>
  <div class="hdr"><span class="pill">Chương 3 · Phương án kinh doanh</span></div>
  <h2 class="ttl"><span class="no">3.8–3.9</span><span class="tx">Chi phí vốn, dòng tiền, NPV và IRR</span></h2>
@@ -1354,8 +1415,8 @@ ul.clean li::before{content:"";position:absolute;left:4px;top:.5em;width:14px;he
 #s18 .base{position:absolute;top:96px;bottom:70px;width:3px;background:var(--navy);z-index:2}
 #s18 .base b{position:absolute;bottom:-34px;left:50%;transform:translateX(-50%);font-size:19px;white-space:nowrap;color:var(--navy)}
 </style>
-<section class="slide" id="s18" data-n="19" data-ch="4" data-title="3.10.1 Độ nhạy và giá trị hoán chuyển">
- <div class="prog"><span class="ln"><i></i></span><span>19 / 26</span></div>
+<section class="slide" id="s18" data-n="20" data-ch="4" data-title="3.10.1 Độ nhạy và giá trị hoán chuyển">
+ <div class="prog"><span class="ln"><i></i></span><span>20 / 27</span></div>
  <div class="deco" aria-hidden="true"><div class="iso" style="right:-110px;bottom:-70px;width:540px"><img data-asrc="iso" src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" alt=""></div><i class="gl " style="right:300px;top:-30px;width:80px;height:80px;--gd:0.25s"></i><i class="gl glime" style="left:30px;bottom:120px;width:46px;height:46px;--gd:0.40s"></i><i class="gl gclear" style="right:600px;bottom:24px;width:70px;height:70px;--gd:0.55s"></i><i class="gl gsoft" style="left:44%;top:-70px;width:120px;height:120px;--gd:0.70s"></i></div>
  <div class="hdr"><span class="pill">Chương 3 · Phương án kinh doanh</span></div>
  <h2 class="ttl"><span class="no">3.10.1</span><span class="tx">Độ nhạy và giá trị hoán chuyển</span></h2>
@@ -1400,8 +1461,8 @@ ul.clean li::before{content:"";position:absolute;left:4px;top:.5em;width:14px;he
 #s19 .mini strong{display:block;font-size:38px;font-weight:900;line-height:1.1}
 #s19 .mini span{display:block;font-size:19px;line-height:1.35;color:#F2F7FF;font-weight:500;margin-top:4px}
 </style>
-<section class="slide" id="s19" data-n="20" data-ch="4" data-title="3.10.2–3.10.6 Kịch bản, Monte Carlo và cơ cấu vốn">
- <div class="prog"><span class="ln"><i></i></span><span>20 / 26</span></div>
+<section class="slide" id="s19" data-n="21" data-ch="4" data-title="3.10.2–3.10.6 Kịch bản, Monte Carlo và cơ cấu vốn">
+ <div class="prog"><span class="ln"><i></i></span><span>21 / 27</span></div>
  <div class="deco" aria-hidden="true"><div class="iso" style="left:-120px;bottom:-80px;width:500px;transform:scaleX(-1)"><img data-asrc="iso" src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" alt=""></div><i class="gl glime" style="right:40px;top:300px;width:50px;height:50px;--gd:0.25s"></i><i class="gl " style="right:40px;bottom:180px;width:90px;height:90px;--gd:0.40s"></i><i class="gl gclear" style="left:520px;bottom:20px;width:60px;height:60px;--gd:0.55s"></i><i class="gl gsoft" style="right:30%;top:-80px;width:140px;height:140px;--gd:0.70s"></i></div>
  <div class="hdr"><span class="pill">Chương 3 · Phương án kinh doanh</span></div>
  <h2 class="ttl"><span class="no">3.10.2–3.10.6</span><span class="tx">Kịch bản, Monte Carlo và cơ cấu vốn</span></h2>
@@ -1447,8 +1508,8 @@ ul.clean li::before{content:"";position:absolute;left:4px;top:.5em;width:14px;he
 #s20 .sum div:nth-child(3){background:var(--lime);color:var(--navy)}
 #s20 .sum b{display:block;font-size:20px;letter-spacing:.06em;text-transform:uppercase;opacity:.85}
 </style>
-<section class="slide" id="s20" data-n="21" data-ch="4" data-title="3.11–3.13 Chi phí – lợi ích và phát triển bền vững">
- <div class="prog"><span class="ln"><i></i></span><span>21 / 26</span></div>
+<section class="slide" id="s20" data-n="22" data-ch="4" data-title="3.11–3.13 Chi phí – lợi ích và phát triển bền vững">
+ <div class="prog"><span class="ln"><i></i></span><span>22 / 27</span></div>
  <div class="deco" aria-hidden="true"><div class="iso" style="right:-140px;top:250px;width:430px"><img data-asrc="iso" src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" alt=""></div><i class="gl " style="left:24px;bottom:150px;width:70px;height:70px;--gd:0.25s"></i><i class="gl glime" style="right:330px;bottom:30px;width:48px;height:48px;--gd:0.40s"></i><i class="gl gclear" style="left:46%;bottom:-24px;width:64px;height:64px;--gd:0.55s"></i><i class="gl gsoft" style="right:18%;top:-60px;width:110px;height:110px;--gd:0.70s"></i></div>
  <div class="hdr"><span class="pill">Chương 3 · Phương án kinh doanh</span></div>
  <h2 class="ttl"><span class="no">3.11–3.13</span><span class="tx">Chi phí – lợi ích và phát triển bền vững</span></h2>
@@ -1496,8 +1557,8 @@ ul.clean li::before{content:"";position:absolute;left:4px;top:.5em;width:14px;he
 #s21 .gc .g p{font-size:19px;line-height:1.35;margin-top:8px;padding:8px 12px;border-radius:12px;background:rgba(214,70,26,.16);font-weight:600}
 #s21 .gc .g.on p{background:rgba(255,255,255,.16)}
 </style>
-<section class="slide" id="s21" data-n="22" data-ch="5" data-title="4.1–4.3 Lộ trình, cổng quyết định và tổ chức">
- <div class="prog"><span class="ln"><i></i></span><span>22 / 26</span></div>
+<section class="slide" id="s21" data-n="23" data-ch="5" data-title="4.1–4.3 Lộ trình, cổng quyết định và tổ chức">
+ <div class="prog"><span class="ln"><i></i></span><span>23 / 27</span></div>
  <div class="deco" aria-hidden="true"><div class="iso" style="right:-80px;bottom:-110px;width:470px"><img data-asrc="iso" src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" alt=""></div><i class="gl gclear" style="left:-40px;top:320px;width:110px;height:110px;--gd:0.25s"></i><i class="gl glime" style="right:520px;top:-14px;width:44px;height:44px;--gd:0.40s"></i><i class="gl " style="left:38%;bottom:16px;width:56px;height:56px;--gd:0.55s"></i><i class="gl gsoft" style="right:8%;top:-80px;width:150px;height:150px;--gd:0.70s"></i></div>
  <div class="hdr"><span class="pill">Chương 4 · Tổ chức thực hiện và giám sát</span></div>
  <h2 class="ttl"><span class="no">4.1–4.3</span><span class="tx">Lộ trình, cổng quyết định và tổ chức</span></h2>
@@ -1512,7 +1573,7 @@ ul.clean li::before{content:"";position:absolute;left:4px;top:.5em;width:14px;he
   <div class="g rv" data-step="4"><h4>G4 Vốn <small>Q1/2028</small></h4><ul class="clean"><li>Lãi vay ≤ 13%</li><li>Thiết bị ≤ 104% dự toán</li><li>15 hợp đồng có TI, trần 6%</li></ul></div>
  </div>
  <img class="brand" data-asrc="logo" src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" alt="" style="display:none">
- <template class="note">Chương 4 biến kết quả thẩm định thành kế hoạch. Lộ trình bắt đầu từ quý IV năm 2026 bằng việc ký biên bản ghi nhớ; thi công và thẩm duyệt PCCC trong nửa đầu 2027; vận hành 5 điểm thí điểm; đánh giá vào quý IV; rồi mở 15 điểm năm 2028. Điểm cốt lõi là bốn cổng quyết định. Cổng 1, mặt bằng: phải có MOU với ít nhất 4 trên 5 tòa nhà. Cổng 2, sẵn sàng vận hành: độ chính xác tính tiền từ 99,5 phần trăm. Cổng 3 quan trọng nhất: các ngưỡng chính là giá trị hoán chuyển ở slide 19; không đạt thì thu hẹp hoặc dừng. Cổng 4: chỉ vay khi lãi suất và chi phí thiết bị trong giới hạn. Bộ máy giữ gọn: 6 người lúc thí điểm, 10 người khi đủ 20 điểm.</template>
+ <template class="note">Chương 4 biến kết quả thẩm định thành kế hoạch. Lộ trình bắt đầu từ quý IV năm 2026 bằng việc ký biên bản ghi nhớ; thi công và thẩm duyệt PCCC trong nửa đầu 2027; vận hành 5 điểm thí điểm; đánh giá vào quý IV; rồi mở 15 điểm năm 2028. Điểm cốt lõi là bốn cổng quyết định. Cổng 1, mặt bằng: phải có MOU với ít nhất 4 trên 5 tòa nhà. Cổng 2, sẵn sàng vận hành: độ chính xác tính tiền từ 99,5 phần trăm. Cổng 3 quan trọng nhất: các ngưỡng chính là giá trị hoán chuyển ở slide 20; không đạt thì thu hẹp hoặc dừng. Cổng 4: chỉ vay khi lãi suất và chi phí thiết bị trong giới hạn. Bộ máy giữ gọn: 6 người lúc thí điểm, 10 người khi đủ 20 điểm.</template>
  <template class="src"><p>Nhóm 4. (2026). Hình 4.1, Bảng 4.1 và Bảng 4.2; tiểu luận SmartLiving Tap &amp; Go.</p><p>Nguyễn Thị Tuyết Như. (2017). <i>Kinh doanh bất động sản – Những vấn đề cơ bản</i>. NXB ĐHQG TP.HCM.</p></template>
 </section>
 
@@ -1549,8 +1610,8 @@ ul.clean li::before{content:"";position:absolute;left:4px;top:.5em;width:14px;he
 #s22 .low b{display:block;font-size:19px;color:#fff;letter-spacing:.04em;text-transform:uppercase}
 #s22 .low span{display:block;font-size:19px;line-height:1.35;font-weight:500;color:#F2F7FF;margin-top:4px}
 </style>
-<section class="slide" id="s22" data-n="23" data-ch="5" data-title="4.4–4.10 Công nghệ, giám sát KPI và quản trị rủi ro">
- <div class="prog"><span class="ln"><i></i></span><span>23 / 26</span></div>
+<section class="slide" id="s22" data-n="24" data-ch="5" data-title="4.4–4.10 Công nghệ, giám sát KPI và quản trị rủi ro">
+ <div class="prog"><span class="ln"><i></i></span><span>24 / 27</span></div>
  <div class="deco" aria-hidden="true"><div class="iso" style="right:-110px;bottom:-70px;width:540px"><img data-asrc="iso" src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" alt=""></div><i class="gl " style="right:300px;top:-30px;width:80px;height:80px;--gd:0.25s"></i><i class="gl glime" style="left:30px;bottom:120px;width:46px;height:46px;--gd:0.40s"></i><i class="gl gclear" style="right:600px;bottom:24px;width:70px;height:70px;--gd:0.55s"></i><i class="gl gsoft" style="left:44%;top:-70px;width:120px;height:120px;--gd:0.70s"></i></div>
  <div class="hdr"><span class="pill">Chương 4 · Tổ chức thực hiện và giám sát</span></div>
  <h2 class="ttl"><span class="no">4.4–4.10</span><span class="tx">Công nghệ, giám sát KPI và quản trị rủi ro</span></h2>
@@ -1594,8 +1655,8 @@ ul.clean li::before{content:"";position:absolute;left:4px;top:.5em;width:14px;he
 #s23 .vd span{font-size:30px;font-weight:800;line-height:1.3}
 #s23 .vd span em{font-style:normal;color:var(--lime)}
 </style>
-<section class="slide" id="s23" data-n="24" data-ch="6" data-title="Kết luận: bốn câu trả lời">
- <div class="prog"><span class="ln"><i></i></span><span>24 / 26</span></div>
+<section class="slide" id="s23" data-n="25" data-ch="6" data-title="Kết luận: bốn câu trả lời">
+ <div class="prog"><span class="ln"><i></i></span><span>25 / 27</span></div>
  <div class="deco" aria-hidden="true"><div class="iso" style="left:-120px;bottom:-80px;width:500px;transform:scaleX(-1)"><img data-asrc="iso" src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" alt=""></div><i class="gl glime" style="right:40px;top:300px;width:50px;height:50px;--gd:0.25s"></i><i class="gl " style="right:40px;bottom:180px;width:90px;height:90px;--gd:0.40s"></i><i class="gl gclear" style="left:520px;bottom:20px;width:60px;height:60px;--gd:0.55s"></i><i class="gl gsoft" style="right:30%;top:-80px;width:140px;height:140px;--gd:0.70s"></i></div>
  <div class="hdr"><span class="pill">Kết luận và kiến nghị</span></div>
  <h2 class="ttl"><span class="tx">Kết luận: bốn câu trả lời</span></h2>
@@ -1624,8 +1685,8 @@ ul.clean li::before{content:"";position:absolute;left:4px;top:.5em;width:14px;he
 #s24 .nd span{display:block;font-size:19px;line-height:1.35;font-weight:500;color:var(--ink2);margin-top:4px}
 #s24 .nd.k{background:var(--block)}#s24 .nd.k b{color:#fff}#s24 .nd.k span{color:#F2F7FF}#s24 .nd.k b i{background:var(--lime);color:var(--navy)}
 </style>
-<section class="slide" id="s24" data-n="25" data-ch="6" data-title="Kiến nghị cho các bên liên quan">
- <div class="prog"><span class="ln"><i></i></span><span>25 / 26</span></div>
+<section class="slide" id="s24" data-n="26" data-ch="6" data-title="Kiến nghị cho các bên liên quan">
+ <div class="prog"><span class="ln"><i></i></span><span>26 / 27</span></div>
  <div class="deco" aria-hidden="true"><i class="gl " style="left:24px;bottom:150px;width:70px;height:70px;--gd:0.25s"></i><i class="gl glime" style="right:330px;bottom:30px;width:48px;height:48px;--gd:0.40s"></i><i class="gl gclear" style="left:46%;bottom:-24px;width:64px;height:64px;--gd:0.55s"></i><i class="gl gsoft" style="right:18%;top:-60px;width:110px;height:110px;--gd:0.70s"></i></div>
  <div class="hdr"><span class="pill">Kết luận và kiến nghị</span></div>
  <h2 class="ttl"><span class="tx">Kiến nghị cho các bên liên quan</span></h2>
@@ -1661,7 +1722,7 @@ ul.clean li::before{content:"";position:absolute;left:4px;top:.5em;width:14px;he
 #s25 .bt{position:absolute;left:96px;right:96px;bottom:50px;display:flex;justify-content:space-between;color:#C9DCFF;font-size:22px;font-weight:600;z-index:3}
 #s25 canvas{position:absolute;inset:0;z-index:2;pointer-events:none}
 </style>
-<section class="slide" id="s25" data-n="26" data-ch="6" data-title="Cảm ơn">
+<section class="slide" id="s25" data-n="27" data-ch="6" data-title="Cảm ơn">
  <div class="bgp" style="background-image:url(#A_s1)"></div>
  <div class="ov"></div><div class="rays"></div>
  <canvas width="1920" height="1080"></canvas>
@@ -1682,7 +1743,7 @@ ul.clean li::before{content:"";position:absolute;left:4px;top:.5em;width:14px;he
 <div id="chapfx" aria-hidden="true"><div class="rays"></div><div class="floor"></div><div class="big"></div><i class="o c" style="left:-80px;top:-60px;width:220px;height:220px"></i><i class="o" style="left:880px;top:120px;width:70px;height:70px"></i><i class="o l" style="left:1020px;top:900px;width:52px;height:52px;animation-delay:-2s"></i><i class="o c" style="right:-70px;bottom:-60px;width:240px;height:240px"></i><i class="o l" style="right:120px;top:70px;width:44px;height:44px;animation-delay:-3s"></i><div class="card"><img alt=""></div><div class="halo"></div><div class="isow"><img class="iso" alt=""></div><div class="num"></div><div class="kk"></div><h2></h2><div class="ln"></div><div class="bar"><i></i></div><canvas width="1920" height="1080"></canvas></div>
 </div></div>
 <script>document.querySelectorAll('[data-asrc]').forEach(i=>i.src=A[i.dataset.asrc]);document.querySelectorAll('[style*=\'url(#A_\']').forEach(e=>{e.setAttribute('style',e.getAttribute('style').replace(/url\(#A_([a-z0-9_]+)\)/g,(m,k)=>'url('+A[k]+')'))});</script>
-<script>window.DECK_TOTAL=26;</script>
+<script>window.DECK_TOTAL=27;</script>
 <script>
 /* Bộ điều khiển trình chiếu dùng chung cho cả 3 mẫu.
    Quy ước HTML:
@@ -1887,7 +1948,7 @@ document.addEventListener('keydown', e => {
 ['touchend', 'click'].forEach(ev => stage.addEventListener(ev, e => { const fx = $('#chapfx'); if (fx.classList.contains('go') && !fx.classList.contains('out')) { e.stopImmediatePropagation(); fx._close && fx._close(); } }, true));
 
 /* ===== bìa: parallax + hạt sáng ===== */
-const s1 = $('#s1');
+['#s1', '#s1b'].forEach(sel => { const s1 = $(sel);
 if (s1) {
   const lays = $$('.lay', s1);
   stage.addEventListener('mousemove', e => {
@@ -1908,7 +1969,7 @@ if (s1) {
     }
     requestAnimationFrame(loop);
   })();
-}
+} });
 
 /* ===== mục lục ===== */
 $$('#s2 [data-go]').forEach(b => b.addEventListener('click', e => { e.stopPropagation(); DECK.go(slides.findIndex(x => x.id === b.dataset.go)); }));
