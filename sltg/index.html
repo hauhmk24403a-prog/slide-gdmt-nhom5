@@ -2078,6 +2078,31 @@ button,input,select,textarea{font-family:inherit}
  <template class="src"><p>Nhóm 4. (2026). Bảng 3.13, Bảng 3.14, mục 3.10.6; mô hình tài chính, sheet ChiSo và DoNhay.</p></template>
 </section>
 
+<style>
+#q4 .qq{top:192px}
+#q4 .sim{left:96px;top:322px;width:1150px;height:546px;padding:18px 24px 14px}
+#q4 .top{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-bottom:6px}
+#q4 .seg{display:inline-flex;background:rgba(20,70,216,.09);border-radius:18px;padding:5px;gap:4px}
+#q4 .seg button{font:inherit;font-size:20px;font-weight:800;color:var(--ink2);background:none;border:0;border-radius:14px;padding:9px 16px;cursor:pointer;transition:.25s var(--ease);font-family:'Be Vietnam Pro','SymX','SymY','EmoX',sans-serif}
+#q4 .seg button[aria-pressed=true]{background:var(--block);color:#fff;box-shadow:0 8px 18px rgba(20,70,216,.3)}
+#q4 .run{font:inherit;font-size:20px;font-weight:800;font-family:'Be Vietnam Pro','SymX','SymY','EmoX',sans-serif;color:var(--navy);background:var(--lime);border:0;border-radius:16px;padding:10px 20px;cursor:pointer;box-shadow:0 10px 22px rgba(127,168,14,.35)}
+#q4 .run:active{transform:translateY(2px)}
+#q4 svg.hist{width:1102px;height:318px;display:block;margin-top:2px}
+#q4 .dice{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+#q4 .dice span{font-size:18px;font-weight:700;color:var(--ink2);background:rgba(255,255,255,.75);border:1.5px solid var(--line);border-radius:12px;padding:6px 12px;font-variant-numeric:tabular-nums}
+#q4 .dice span b{color:var(--blue);font-weight:900}
+#q4 .side{left:1270px;top:322px;width:554px;height:546px;padding:20px 24px}
+#q4 .side .kick{margin-bottom:12px}
+#q4 .kpi{border-radius:18px;background:rgba(255,255,255,.1);border:1.5px solid rgba(255,255,255,.18);padding:12px 16px;margin-bottom:10px}
+#q4 .kpi b{display:block;font-size:19px;font-weight:800;color:#C9DCFF;letter-spacing:.03em;text-transform:uppercase}
+#q4 .kpi strong{display:block;font-size:46px;font-weight:900;line-height:1.08;color:#fff;font-variant-numeric:tabular-nums}
+#q4 .kpi.red strong{color:#FF9270}
+#q4 .kpi.ok strong{color:#D9F57A}
+#q4 .cmp{margin-top:6px;font-size:19px;line-height:1.4;color:#C9DCFF;font-weight:600}
+#q4 .cmp div{display:flex;justify-content:space-between;gap:10px;padding:7px 0;border-top:1.5px solid rgba(255,255,255,.22)}
+#q4 .cmp div b{color:#fff;font-weight:900;font-variant-numeric:tabular-nums}
+#q4 .note2{margin-top:10px;font-size:17px;line-height:1.35;color:#BCD3F5;font-weight:500}
+</style>
 <section class="slide qa" id="q4" data-n="36" data-ch="6" data-title="Hỏi đáp 4: NPV 845 triệu hay âm 1,3 tỷ?">
  <div class="prog"><span class="ln"><i></i></span><span>36 / 38</span></div>
  <div class="deco" aria-hidden="true"><div class="iso" style="right:-140px;top:250px;width:430px"><img data-asrc="iso" src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" alt=""></div><i class="gl " style="left:24px;bottom:150px;width:70px;height:70px;--gd:0.25s"></i><i class="gl glime" style="right:330px;bottom:30px;width:48px;height:48px;--gd:0.40s"></i><i class="gl gclear" style="left:46%;bottom:-24px;width:64px;height:64px;--gd:0.55s"></i><i class="gl gsoft" style="right:18%;top:-60px;width:110px;height:110px;--gd:0.70s"></i></div>
@@ -2086,32 +2111,29 @@ button,input,select,textarea{font-family:inherit}
  <div class="box qq fx" style="--d:.15s"><div class="kick">Câu hỏi</div>
   <p>Slide ghi NPV 845 triệu, nhưng trong file mô hình lại có con số NPV âm khoảng 1,3 tỷ. Con số nào mới đúng, nhóm có tính nhầm không, và rốt cuộc dự án có khả thi hay không?</p>
  </div>
- <div class="box cc c1 fx left" style="--d:.3s"><h4><i>1</i>NPV tất định</h4>
-  <p class="fig">845 tr</p><p class="figc">một lần chạy, giả định trung bình</p>
-  <ul class="clean">
-   <li>Sheet ChiSo, giả định <b class="hl">làm đủ 20 điểm</b></li>
-   <li>Trả lời câu hỏi: <b class="hl">“nếu mọi thứ đúng kế hoạch”</b></li>
-  </ul>
+ <div class="box sim fx left" style="--d:.3s">
+  <div class="top">
+   <div class="kick" style="margin:0">Mô phỏng chạy trực tiếp · 3.000 lần</div>
+   <div class="seg" id="q4seg"><button data-m="0" aria-pressed="true">Cam kết 20 điểm ngay</button><button data-m="1" aria-pressed="false">Đầu tư theo cổng</button></div>
+   <button class="run" id="q4run">Chạy lại</button>
+  </div>
+  <svg class="hist" id="q4h" viewBox="0 0 1102 318" preserveAspectRatio="none" aria-label="Phân phối NPV của 3.000 lần mô phỏng"></svg>
+  <div class="dice" id="q4d"></div>
  </div>
- <div class="box cc c2 blue fx" style="--d:.42s"><h4><i>2</i>Nếu cam kết ngay</h4>
-  <p class="fig">âm 1,31 tỷ</p><p class="figc">Monte Carlo 3.000 lần, cam kết 20 điểm ngay</p>
-  <ul class="clean">
-   <li>Xác suất lỗ <b class="hl">63,0%</b></li>
-   <li>Sáu biến dao động theo phân phối đã công bố</li>
-   <li>Trả lời câu hỏi: <b class="hl">“nếu đời thật có sai số”</b></li>
-  </ul>
+ <div class="box side navy fx right" style="--d:.45s"><div class="kick">Kết quả</div>
+  <div class="kpi"><b>Số lần đã chạy</b><strong id="q4n">0</strong></div>
+  <div class="kpi red" id="q4mk"><b>NPV bình quân</b><strong id="q4m">—</strong></div>
+  <div class="kpi red" id="q4pk"><b>Xác suất NPV &lt; 0</b><strong id="q4p">—</strong></div>
+  <div class="cmp">
+   <div><span>Mô hình công bố</span><b id="q4r1">−1,31 tỷ · 63,0%</b></div>
+   <div><span>Khoảng 5%–95%</span><b id="q4r2">−8,19 … 5,60 tỷ</b></div>
+  </div>
+  <p class="note2">Máy chạy bằng chính bảng độ nhạy và phân phối đã công bố trong mô hình, nên kết quả tại chỗ trùng với số trong file.</p>
  </div>
- <div class="box cc c3 navy fx right" style="--d:.54s"><h4><i>3</i>Nếu đi theo cổng</h4>
-  <p class="fig">+2,67 tỷ</p><p class="figc">cũng mô phỏng đó, nhưng đầu tư theo cổng</p>
-  <ul class="clean">
-   <li>Xác suất lỗ còn <b class="hl">22,8%</b></li>
-   <li>Khác biệt duy nhất: <b class="hl">có dừng quan sát sau thí điểm hay không</b></li>
-  </ul>
- </div>
- <div class="core fx" style="--d:.66s"><b>Chốt</b><span>Con số âm 1,3 tỷ không phải lỗi tính — nó là bằng chứng mạnh nhất cho lập luận của nhóm: khả thi nếu đi theo cổng, không khả thi nếu cam kết 20 điểm ngay.</span></div>
+ <div class="core fx" style="--d:.6s"><b>Chốt</b><span>Con số âm 1,3 tỷ không phải lỗi tính — nó là bằng chứng mạnh nhất cho lập luận của nhóm: khả thi nếu đi theo cổng, không khả thi nếu cam kết 20 điểm ngay.</span></div>
  <img class="brand" data-asrc="logo" src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" alt=""><span class="foot">Nhóm 4 · <b>SLTG</b></span>
- <template class="note">Hai con số đều có thật và đều đúng, vì chúng trả lời hai câu hỏi khác nhau. 845 triệu là NPV tất định với giả định trung bình và làm đủ 20 điểm. Âm 1,31 tỷ là NPV bình quân của 3.000 lần mô phỏng khi cam kết 20 điểm ngay, xác suất lỗ 63 phần trăm. Nhưng con số thứ ba mới là kết luận: cùng mô phỏng đó, nếu đầu tư theo cổng thì NPV bình quân dương 2,67 tỷ và xác suất lỗ còn 23 phần trăm. Nên tính khả thi là khả thi có điều kiện.</template>
- <template class="src"><p>Nhóm 4. (2026). Mô hình tài chính, sheet ChiSo (NPV @ WACC = 845,02 tr) và sheet DoNhay mục E (Monte Carlo 3.000 lần).</p></template>
+ <template class="note">Thay vì nói, nhóm cho chạy luôn mô phỏng. Mỗi lần chạy là một lần rút ngẫu nhiên sáu biến theo đúng phân phối đã công bố: lượng giao dịch, cà phê, biên gộp, vốn đầu tư, lãi vay, chi phí nhân sự. Cột đỏ là những lần NPV âm. Chạy đủ 3.000 lần ở chế độ cam kết 20 điểm ngay, NPV bình quân ra khoảng âm 1,3 tỷ và xác suất lỗ khoảng 63 phần trăm — đúng con số trong file mô hình. Bấm sang chế độ đầu tư theo cổng, phân phối dịch hẳn sang phải: bình quân dương khoảng 2,7 tỷ, xác suất lỗ còn khoảng 23 phần trăm. Khác biệt duy nhất là có dừng lại quan sát sau thí điểm hay không.</template>
+ <template class="src"><p>Nhóm 4. (2026). Mô hình tài chính, sheet ChiSo (NPV @ WACC = 845,02 tr) và sheet DoNhay mục C (độ nhạy một biến) và mục E (Monte Carlo 3.000 lần, phân phối đầu vào).</p></template>
 </section>
 
 <section class="slide qa" id="q5" data-n="37" data-ch="6" data-title="Hỏi đáp 5: Giảm một phần ba, hòa vốn và ưu tiên khi giao dịch giảm">
@@ -2875,6 +2897,113 @@ if (!reduced && window.A && A.iso) {
     me.onfinish = () => { an = null; if (outOnly) { isoM.style.opacity = 0; me.cancel(); return; } settle(); requestAnimationFrame(() => requestAnimationFrame(() => { if (!an) { isoM.style.opacity = 0; me.cancel(); } })); };
   }));
 }
+
+/* ===== q4: Monte Carlo chạy trực tiếp ===== */
+const q4 = $('#q4');
+if (q4) {
+  const B = 0.845019185319115;
+  const T = {
+    gd: [[.7,.8,.9,1,1.1,1.2,1.3],[-8.83919,-5.43963,-2.27156,B,3.94277,7.01395,10.08512]],
+    cf: [[.5,.75,1,1.25,1.5],[-5.56084,-2.33105,B,4.00071,7.12983]],
+    bg: [[.26,.28,.30,.32,.34],[-4.99776,-2.05369,B,3.72832,6.58663]],
+    vd: [[.85,.9,.95,1,1.05,1.1,1.2],[3.71866,2.76078,1.80290,B,-.11286,-1.07075,-3.00773]],
+    lv: [[.08,.09,.10,.11,.12,.13,.14],[1.38129,1.19967,1.02093,B,.67188,.50147,.33374]],
+    ns: [[18,21.5,25,30],[2.51853,B,-.82967,-3.25239]]
+  };
+  const ip = (k, x) => { const [xs, ys] = T[k], n = xs.length;
+    if (x <= xs[0]) return ys[0] + (ys[1] - ys[0]) * (x - xs[0]) / (xs[1] - xs[0]);
+    if (x >= xs[n-1]) return ys[n-2] + (ys[n-1] - ys[n-2]) * (x - xs[n-2]) / (xs[n-1] - xs[n-2]);
+    for (let i = 0; i < n - 1; i++) if (x >= xs[i] && x <= xs[i+1]) return ys[i] + (ys[i+1] - ys[i]) * (x - xs[i]) / (xs[i+1] - xs[i]); };
+  const tri = (a, m, b) => { const u = Math.random(), c = (m - a) / (b - a);
+    return u < c ? a + Math.sqrt(u * (b - a) * (m - a)) : b - Math.sqrt((1 - u) * (b - a) * (b - m)); };
+  const gauss = sd => { let u = 0, v = 0; while (!u) u = Math.random(); while (!v) v = Math.random(); return sd * Math.sqrt(-2 * Math.log(u)) * Math.cos(2 * Math.PI * v); };
+  const N = 3000, LO = -16, HI = 14, NB = 30, W = 1102, H = 318, PB = 34, PT = 10;
+  const bw = (W - 24) / NB, x0 = 12;
+  const zx = x0 + (0 - LO) / (HI - LO) * (W - 24);
+  let mode = 0, bins = new Array(NB).fill(0), vals = [], neg = 0, sum = 0, raf = 0, last = null;
+  const el = { h: $('#q4h'), n: $('#q4n'), m: $('#q4m'), p: $('#q4p'), d: $('#q4d'), mk: $('#q4mk'), pk: $('#q4pk'), r1: $('#q4r1'), r2: $('#q4r2') };
+
+  function draw1() {
+    const g = tri(.75, 1, 1.2), c = tri(.5, 1, 1.3), b = tri(.27, .30, .33),
+          v = tri(.95, 1, 1.15), l = .10 + Math.random() * .03, s = tri(19, 21.5, 25);
+    let y = B + (ip('gd', g) - B) + (ip('cf', c) - B) + (ip('bg', b) - B) + (ip('vd', v) - B) + (ip('lv', l) - B) + (ip('ns', s) - B);
+    let stop = false;
+    if (mode) { y = .87 * y + 4.04; if (y + gauss(.35) < -4.55) { y = -4.55; stop = true; } }
+    last = { g, c, b, v, l, s, y, stop };
+    return y;
+  }
+  const fmt = (x, d = 2) => (x < 0 ? '−' : '') + vn(Math.abs(x), d);
+
+  function paint() {
+    const mx = Math.max(1, ...bins); let o = '';
+    o += `<rect x="${x0}" y="${PT}" width="${zx - x0}" height="${H - PB - PT}" fill="#D6461A" opacity=".05"/>`;
+    for (let i = 0; i < NB; i++) {
+      if (!bins[i]) continue;
+      const hh = bins[i] / mx * (H - PB - PT - 6), cx = x0 + i * bw;
+      const mid = LO + (i + .5) * (HI - LO) / NB;
+      o += `<rect x="${cx + 1.5}" y="${H - PB - hh}" width="${bw - 3}" height="${hh}" rx="3" fill="${mid < 0 ? '#D6461A' : (mode ? '#1446D8' : '#7F8CA6')}" opacity="${mid < 0 ? .9 : 1}"/>`;
+    }
+    o += `<line x1="${zx}" x2="${zx}" y1="${PT - 6}" y2="${H - PB + 4}" stroke="#0D1F4F" stroke-width="3"/>`;
+    o += `<text x="${zx + 8}" y="${PT + 12}" font-size="18" font-weight="800" fill="#0D1F4F">NPV = 0</text>`;
+    if (vals.length > 30) {
+      const mean = sum / vals.length, mxp = x0 + (mean - LO) / (HI - LO) * (W - 24);
+      o += `<line x1="${mxp}" x2="${mxp}" y1="${PT - 6}" y2="${H - PB + 4}" stroke="#B5E61D" stroke-width="4" stroke-dasharray="9 7"/>`;
+      o += `<text x="${mxp + (mean < 0 ? -10 : 10)}" y="${PT + 34}" text-anchor="${mean < 0 ? 'end' : 'start'}" font-size="18" font-weight="900" fill="#5E8A00">bình quân ${fmt(mean, 2)}</text>`;
+    }
+    for (let v = -15; v <= 10; v += 5) {
+      const xx = x0 + (v - LO) / (HI - LO) * (W - 24);
+      o += `<text x="${xx}" y="${H - 10}" text-anchor="middle" font-size="18" font-weight="700" fill="#34446A">${v}</text>`;
+    }
+    o += `<text x="${W - 12}" y="${H - 10}" text-anchor="end" font-size="17" font-weight="700" fill="#34446A">NPV, tỷ đồng</text>`;
+    el.h.innerHTML = o;
+    el.n.textContent = vn(vals.length, 0);
+    if (vals.length) {
+      const mean = sum / vals.length, pr = neg / vals.length;
+      el.m.textContent = fmt(mean, 2) + ' tỷ';
+      el.p.textContent = vn(pr * 100, 1) + '%';
+      const good = mean > 0;
+      el.mk.classList.toggle('ok', good); el.mk.classList.toggle('red', !good);
+      el.pk.classList.toggle('ok', pr < .5); el.pk.classList.toggle('red', pr >= .5);
+    }
+    if (last) el.d.innerHTML =
+      `<span>giao dịch <b>×${vn(last.g, 2)}</b></span><span>cà phê <b>×${vn(last.c, 2)}</b></span>` +
+      `<span>biên gộp <b>${vn(last.b * 100, 1)}%</b></span><span>vốn <b>×${vn(last.v, 2)}</b></span>` +
+      `<span>lãi vay <b>${vn(last.l * 100, 1)}%</b></span><span>nhân sự <b>${vn(last.s, 1)} tr</b></span>` +
+      `<span>→ NPV <b>${fmt(last.y, 2)} tỷ</b>${last.stop ? ' (dừng sau thí điểm)' : ''}</span>`;
+  }
+
+  function reset() {
+    clearInterval(raf);
+    bins = new Array(NB).fill(0); vals = []; neg = 0; sum = 0; last = null;
+    el.r1.textContent = mode ? '2,67 tỷ · 22,8%' : '−1,31 tỷ · 63,0%';
+    el.r2.textContent = mode ? '−3,44 … 8,71 tỷ' : '−8,19 … 5,60 tỷ';
+    paint();
+    if (reduced) { for (let i = 0; i < N; i++) push(draw1()); paint(); return; }
+    const t0 = Date.now();
+    const step = () => {
+      const want = Math.min(N, Math.round((Date.now() - t0) / 1800 * N));
+      while (vals.length < want) push(draw1());
+      paint();
+      if (vals.length >= N) { clearInterval(raf); raf = 0; }
+    };
+    raf = setInterval(step, 33); step();
+  }
+  function push(y) {
+    vals.push(y); sum += y; if (y < 0) neg++;
+    const k = Math.floor((y - LO) / (HI - LO) * NB);
+    bins[Math.max(0, Math.min(NB - 1, k))]++;
+  }
+  $$('#q4seg button').forEach(b => b.addEventListener('click', e => {
+    e.stopPropagation(); mode = +b.dataset.m;
+    $$('#q4seg button').forEach(x => x.setAttribute('aria-pressed', +x.dataset.m === mode));
+    reset();
+  }));
+  $('#q4run').addEventListener('click', e => { e.stopPropagation(); reset(); });
+  hooks.q4 = () => { mode = 0; $$('#q4seg button').forEach(x => x.setAttribute('aria-pressed', +x.dataset.m === 0)); reset();
+    clearTimeout(q4._t); if (!reduced) q4._t = setTimeout(() => { if (q4.classList.contains('active')) { mode = 1;
+      $$('#q4seg button').forEach(x => x.setAttribute('aria-pressed', +x.dataset.m === 1)); reset(); } }, 5200); };
+}
+
 { const sb = $('#s1 .start'); if (sb) sb.addEventListener('click', e => { e.stopPropagation(); if (DECK.cur === slides.indexOf($('#s1'))) DECK.next(); }); }
 window.FX = {hooks, $, $$};
 })();
