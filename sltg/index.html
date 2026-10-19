@@ -291,7 +291,7 @@ ul.clean li::before{content:"";position:absolute;left:4px;top:.5em;width:14px;he
 #bg .b3{opacity:.65}#bg .b2{opacity:.6}
 .box,.glass,#s2 .c:not(.b),#s4 .fc .f,#s5 .m,#s6 .tab:not([aria-selected=true]),#s12 .c,#s23 .a:not(.b),#s24 .nd:not(.k),#s9 .ow,#s9 .it,#s22 .tile,#s22 .ly:first-child,#s11 .st:not(.cur),.seg{
  background:var(--gl-bg)!important;border:1px solid var(--gl-bd)!important;
- backdrop-filter:blur(16px) saturate(160%);-webkit-backdrop-filter:blur(16px) saturate(160%);
+ backdrop-filter:blur(26px) saturate(180%);-webkit-backdrop-filter:blur(26px) saturate(180%);
  box-shadow:0 30px 60px -20px rgba(13,42,122,.28),0 10px 24px -12px rgba(13,42,122,.18),inset 0 1px 0 rgba(255,255,255,.95),inset 1px 0 0 rgba(255,255,255,.5),inset 0 -1px 0 rgba(255,255,255,.2)!important}
 .box::after,#s2 .c::after,#s23 .a::after,#s12 .c::after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;padding:1px;
  background:linear-gradient(135deg,rgba(255,255,255,.95),rgba(255,255,255,.1) 40%,rgba(92,200,240,.35) 75%,rgba(255,255,255,.7));
@@ -300,7 +300,7 @@ ul.clean li::before{content:"";position:absolute;left:4px;top:.5em;width:14px;he
 .box.navy{background:linear-gradient(150deg,rgba(26,52,120,.9),rgba(10,26,70,.94))!important;border:1px solid rgba(255,255,255,.22)!important;box-shadow:0 30px 60px -18px rgba(13,31,79,.55),inset 0 1px 0 rgba(255,255,255,.25)!important}
 .box.blue::after,.box.navy::after{background:linear-gradient(135deg,rgba(255,255,255,.6),rgba(255,255,255,0) 45%,rgba(181,230,29,.35) 100%)}
 .pill{background:linear-gradient(135deg,rgba(47,123,255,.9),rgba(20,70,216,.92));border:1px solid rgba(255,255,255,.45);box-shadow:0 10px 24px -6px rgba(20,70,216,.45),inset 0 1px 0 rgba(255,255,255,.4)}
-.chip{background:rgba(255,255,255,.82);border:1px solid rgba(255,255,255,.9)}
+.chip{background:rgba(255,255,255,.62);border:1px solid rgba(255,255,255,.85);backdrop-filter:blur(10px)}
 .chip.navy{background:rgba(13,31,79,.88)}
 .prog,.brand,.foot{background:rgba(255,255,255,.5)!important;border:1px solid rgba(255,255,255,.8);backdrop-filter:blur(12px)}
 .slide .srcbtn{background:rgba(255,255,255,.55);backdrop-filter:blur(12px);border:1px solid rgba(20,70,216,.55)}
@@ -372,13 +372,9 @@ ul.clean li::before{content:"";position:absolute;left:4px;top:.5em;width:14px;he
 /* ===== hiệu năng: chống giật khi chuyển slide ===== */
 .slide{will-change:auto!important}
 .slide.active,.slide.leaving{will-change:opacity,transform!important}
-#bg *{animation:none!important}
-.slide:not(.active) *,.slide.leaving *{backdrop-filter:none!important;-webkit-backdrop-filter:none!important}
-#s1 canvas.pt{display:none}
-#s1.enter .ph{animation:none!important}
+.slide:not(.active):not(.leaving) *{backdrop-filter:none!important;-webkit-backdrop-filter:none!important}
 
 /* lớp tia sáng 2800 px xoay liên tục + nền lưới chạy: rất nặng khi chuyển slide */
-.cfx .rays,#s1b .rays,.cfx .floor,#s1b .floor{animation:none!important}
 #s3 .cmp.fx{animation-name:fxFade!important}
 @keyframes fxFade{from{opacity:0}to{opacity:1}}
 
@@ -387,10 +383,9 @@ ul.clean li::before{content:"";position:absolute;left:4px;top:.5em;width:14px;he
 #s3 .cmp .aftw .aft{clip-path:none!important;transform:translateX(calc(var(--xv,50) * -1%));will-change:transform}
 #s3 .cmp .bar{left:0!important;transform:translateX(calc(var(--xv,50) * 9.2px));will-change:transform}
 #s3 .cmp .knob{left:0!important;transform:translateX(calc(var(--xv,50) * 9.2px));will-change:transform}
-#s3 .cmp .tg{backdrop-filter:none!important}
 
 /* trong lúc chuyển slide và chạy hiệu ứng vào: tắt kính mờ (nhìn gần như không khác), bật lại khi slide đã đứng yên */
-.slide:not(.settled):not(#s1) *{backdrop-filter:none!important;-webkit-backdrop-filter:none!important}
+
 
 </style></head>
 <body>
@@ -2421,8 +2416,9 @@ const bgc = $('#bgc');
 if (bgc && !reduced) {
   const ctx = bgc.getContext('2d');
   const P = Array.from({length: 46}, () => ({x: Math.random() * 1920, y: Math.random() * 1080, r: .8 + Math.random() * 2.2, v: .15 + Math.random() * .45, a: Math.random() * 6.28, c: Math.random() < .3}));
-  /* vẽ một lần, đứng yên: nền động bên dưới lớp kính làm trình duyệt phải làm mờ lại liên tục */
-  for (const p of P) { ctx.beginPath(); ctx.arc(p.x, p.y, p.r, 0, 6.283); ctx.fillStyle = p.c ? 'rgba(181,230,29,.8)' : 'rgba(255,255,255,.95)'; ctx.fill(); }
+  /* hạt sáng nền: bay lên chậm, vẽ ~30 khung/giây cho nhẹ */
+  let lt = 0;
+  (function bgLoop(t) { requestAnimationFrame(bgLoop); if (document.hidden || t - lt < 33) return; lt = t; ctx.clearRect(0, 0, 1920, 1080); for (const p of P) { p.y -= p.v * 2; p.a += .01; p.x += Math.sin(p.a) * .3; if (p.y < -10) p.y = 1090; ctx.beginPath(); ctx.arc(p.x, p.y, p.r, 0, 6.283); ctx.fillStyle = p.c ? 'rgba(181,230,29,.8)' : 'rgba(255,255,255,.95)'; ctx.fill(); } })(0);
 }
 /* đặt phối cảnh 3D vào chỗ trống, không chồng lên nội dung */
 const placeIso = sl => {
