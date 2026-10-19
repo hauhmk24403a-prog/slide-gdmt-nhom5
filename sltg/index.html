@@ -441,7 +441,7 @@ ul.clean li::before{content:"";position:absolute;left:4px;top:.5em;width:14px;he
 </section>
 
 
-<!-- ===================== 1b. PHỐI CẢNH ĐIỂM BÁN ===================== -->
+<!-- ===================== 1b. PHỐI CẢNH ===================== -->
 <style>
 #s1b{background:radial-gradient(ellipse 60% 50% at 50% 78%,#FFFFFF 0%,rgba(255,255,255,0) 62%),radial-gradient(ellipse 50% 45% at 50% 30%,rgba(127,212,255,.55) 0%,rgba(127,212,255,0) 70%),linear-gradient(180deg,#A9D8FF 0%,#D2ECFF 45%,#F3FAFF 100%)}
 #s1b .rays{position:absolute;left:960px;top:330px;width:2800px;height:2800px;margin:-1400px 0 0 -1400px;border-radius:50%;background:repeating-conic-gradient(from 0deg,rgba(255,255,255,.8) 0deg 4deg,rgba(255,255,255,0) 4deg 12deg);-webkit-mask-image:radial-gradient(circle,#000 0%,rgba(0,0,0,.55) 22%,transparent 52%);mask-image:radial-gradient(circle,#000 0%,rgba(0,0,0,.55) 22%,transparent 52%);animation:spin 90s linear infinite}
@@ -452,54 +452,131 @@ ul.clean li::before{content:"";position:absolute;left:4px;top:.5em;width:14px;he
 #s1b .orb.lime{background:radial-gradient(circle at 32% 28%,#fff 0 7%,#E8FF9B 22%,#B5E61D 60%,#7FA80E 90%)}
 #s1b .orb.clear{background:radial-gradient(circle at 32% 28%,#fff 0 9%,rgba(210,238,255,.85) 26%,rgba(120,200,255,.45) 62%,rgba(47,123,255,.25) 100%);border:1.5px solid rgba(255,255,255,.85);box-shadow:0 20px 40px rgba(20,70,216,.15)}
 #s1b .orb.big{opacity:.85}
+/* đầu trang */
+#s1b .topbar{position:absolute;left:96px;top:44px;display:flex;gap:24px;align-items:center;z-index:12}
+#s1b .topbar img{height:64px}
+/* chữ bong bóng */
+#s1b .word{position:absolute;left:0;right:0;top:136px;display:flex;justify-content:center;align-items:flex-end;z-index:9;pointer-events:none}
+#s1b .lt{position:relative;display:block;margin:0 -8px;transform-origin:50% 100%;opacity:0}
+#s1b .lt img{display:block;height:258px;width:auto}
+#s1b .lt.dot img{height:104px}
+#s1b .lt.dot{margin:0 0 30px -6px;transform-origin:50% 50%}
+#s1b.enter .lt{animation:drop 1.15s cubic-bezier(.3,1.35,.5,1) both;animation-delay:calc(.25s + var(--i) * .16s)}
+#s1b.enter .lt.dot{animation:dotin .9s cubic-bezier(.3,1.7,.5,1) 1.2s both,dotpulse 2.4s ease-in-out 2.2s infinite}
+@keyframes drop{0%{opacity:0;transform:translateY(-560px) scaleY(1.15)}55%{opacity:1;transform:translateY(0) scaleY(.8) scaleX(1.12)}75%{transform:translateY(-28px) scaleY(1.05)}100%{opacity:1;transform:none}}
+@keyframes dotin{from{opacity:0;transform:scale(0)}to{opacity:1;transform:none}}
+@keyframes dotpulse{50%{transform:scale(1.14)}}
+#s1b .lt .gz{position:absolute;inset:0;-webkit-mask-size:100% 100%;mask-size:100% 100%;background:linear-gradient(105deg,transparent 35%,rgba(255,255,255,.95) 48%,transparent 60%) no-repeat;background-size:260% 100%;background-position:160% 0;mix-blend-mode:screen}
+#s1b.enter .lt .gz{animation:glare 4.5s ease-in-out 2.4s infinite;animation-delay:calc(2.4s + var(--i) * .12s)}
+@keyframes glare{0%,55%{background-position:160% 0}100%{background-position:-60% 0}}
 #s1b .sp{position:absolute;width:34px;height:34px;z-index:10;opacity:0;pointer-events:none}
 #s1b .sp::before{content:"";position:absolute;inset:0;background:#fff;clip-path:polygon(50% 0,60% 40%,100% 50%,60% 60%,50% 100%,40% 60%,0 50%,40% 40%);filter:drop-shadow(0 0 6px #fff)}
 #s1b.enter .sp{animation:twk 2.6s ease-in-out infinite;animation-delay:var(--d)}
 @keyframes twk{0%,100%{opacity:0;transform:scale(.3) rotate(0)}50%{opacity:1;transform:scale(1) rotate(45deg)}}
-#s1b .halo{position:absolute;left:330px;top:880px;width:1260px;height:230px;border-radius:50%;background:radial-gradient(ellipse,rgba(13,42,122,.42) 0%,rgba(20,70,216,.18) 45%,rgba(20,70,216,0) 72%);z-index:6}
-#s1b .glow{position:absolute;left:360px;top:180px;width:1200px;height:820px;border-radius:50%;background:radial-gradient(ellipse,rgba(255,255,255,.95) 0%,rgba(255,255,255,0) 65%);z-index:6}
+/* cửa hàng + quỹ đạo */
+#s1b .halo{position:absolute;left:520px;top:860px;width:880px;height:190px;border-radius:50%;background:radial-gradient(ellipse,rgba(13,42,122,.42) 0%,rgba(20,70,216,.18) 45%,rgba(20,70,216,0) 72%);z-index:6}
+#s1b .glow{position:absolute;left:560px;top:420px;width:800px;height:560px;border-radius:50%;background:radial-gradient(ellipse,rgba(255,255,255,.95) 0%,rgba(255,255,255,0) 65%);z-index:6}
 #s1b.enter .glow{animation:glowp 4s ease-in-out 2s infinite}
 @keyframes glowp{50%{opacity:.55;transform:scale(1.08)}}
 #s1b .orbit{position:absolute;left:0;top:0;width:1920px;height:1080px;z-index:6;overflow:visible;pointer-events:none}
 #s1b .orbit ellipse{fill:none;stroke:rgba(20,70,216,.35);stroke-width:2.5;stroke-dasharray:8 12}
 #s1b .orbit ellipse.o2{stroke:rgba(255,255,255,.9);stroke-dasharray:none;stroke-width:3}
-#s1b.enter .orbit{animation:fxZoom 1.2s var(--ease) .8s both}
-#s1b .store{position:absolute;left:330px;top:150px;width:1260px;z-index:7;filter:drop-shadow(0 50px 60px rgba(13,31,79,.28))}
-#s1b.enter .store{animation:storein 1.4s cubic-bezier(.22,.61,.36,1) .15s both}
-@keyframes storein{from{opacity:0;transform:translateY(160px) scale(.86)}to{opacity:1;transform:none}}
+#s1b.enter .orbit{animation:fxZoom 1.2s var(--ease) 1.4s both}
+#s1b .store{position:absolute;left:550px;top:420px;width:820px;z-index:7}
+#s1b.enter .store{animation:storein 1.6s cubic-bezier(.2,.9,.25,1) .7s both}
+@keyframes storein{from{opacity:0;transform:translateY(280px) scale(.7) rotate(-4deg)}to{opacity:1;transform:none}}
 #s1b .storewrap{position:absolute;inset:0;z-index:7;animation:flt 7s ease-in-out 2.4s infinite}
-#s1b .ring{position:absolute;left:960px;top:960px;width:260px;height:70px;margin:-35px 0 0 -130px;border-radius:50%;border:3px solid rgba(181,230,29,.95);opacity:0;z-index:6}
-#s1b.enter .ring{animation:ringgo 3.2s ease-out 1.4s infinite}
-#s1b.enter .ring.r2{animation-delay:2.47s}#s1b.enter .ring.r3{animation-delay:3.54s}
-@keyframes ringgo{0%{transform:scale(.4);opacity:1}100%{transform:scale(6);opacity:0}}
+#s1b .ring{position:absolute;left:960px;top:905px;width:200px;height:56px;margin:-28px 0 0 -100px;border-radius:50%;border:3px solid rgba(181,230,29,.95);opacity:0;z-index:6}
+#s1b.enter .ring{animation:ringgo 3.2s ease-out 2.2s infinite}
+#s1b.enter .ring.r2{animation-delay:3.27s}#s1b.enter .ring.r3{animation-delay:4.34s}
+@keyframes ringgo{0%{transform:scale(.4);opacity:1}100%{transform:scale(5.4);opacity:0}}
+/* thẻ ảnh kính */
+#s1b .pc{position:absolute;z-index:8;width:300px;padding:10px 10px 0;border-radius:24px;background:rgba(255,255,255,.55);border:1.5px solid rgba(255,255,255,.95);box-shadow:0 24px 50px rgba(20,70,216,.25),inset 0 1px 0 #fff}
+#s1b .pc img{display:block;width:100%;height:178px;object-fit:cover;border-radius:16px}
+#s1b .pc b{display:flex;align-items:center;gap:8px;padding:10px 6px 12px;font-size:21px;font-weight:800;color:var(--navy)}
+#s1b .pc b::before{content:"";width:12px;height:12px;border-radius:50%;background:var(--lime);box-shadow:0 0 0 4px rgba(181,230,29,.3)}
+#s1b .pc.a{left:96px;top:196px;transform:rotate(-6deg)}
+#s1b .pc.b{right:96px;top:176px;transform:rotate(6deg)}
+#s1b.enter .pc{animation:pcin 1.2s cubic-bezier(.2,.9,.25,1) both}
+#s1b.enter .pc.a{animation-delay:2s}#s1b.enter .pc.b{animation-delay:2.2s}
+@keyframes pcin{from{opacity:0;transform:translateY(60px) rotate(0) scale(.8)}}
+#s1b .pcw{position:absolute;inset:0;z-index:8;animation:flt 8s ease-in-out 3.2s infinite}
+#s1b .pcw.b2{animation-delay:4.4s}#s1b .pcw.b3{animation-delay:5.2s}
+#s1b .pc.c{right:120px;top:640px;transform:rotate(-4deg)}#s1b.enter .pc.c{animation-delay:2.4s}
+/* chip */
+#s1b .fchip{position:absolute;z-index:11;display:inline-flex;align-items:center;gap:10px;background:rgba(255,255,255,.88);border:2px solid #fff;border-radius:40px;padding:12px 22px 12px 14px;font-size:23px;font-weight:800;color:var(--navy);box-shadow:0 16px 34px rgba(20,70,216,.22);white-space:nowrap}
+#s1b .fchip i{width:36px;height:36px;border-radius:50%;background:var(--block);display:grid;place-items:center;color:#fff;font-style:normal;font-size:18px}
+#s1b .fchip.l i{background:var(--lime);color:var(--navy)}
+/* chữ hai bên */
+#s1b .left{position:absolute;left:96px;top:586px;width:450px;z-index:12}
+#s1b .left .k{font-size:20px;font-weight:800;letter-spacing:.08em;color:var(--blue);text-transform:uppercase;white-space:nowrap}
+#s1b .left h1{margin:10px 0 0;font-size:62px;line-height:1.04;font-weight:900;letter-spacing:-.02em;color:var(--navy)}
+#s1b .left h1 em{font-style:normal;background:linear-gradient(90deg,#1446D8,#2F7BFF 60%,#3DB4E8);-webkit-background-clip:text;background-clip:text;color:transparent}
+#s1b .left p{margin-top:14px;font-size:25px;line-height:1.42;font-weight:500;color:var(--ink2)}
+#s1b .right{position:absolute;right:96px;top:590px;width:440px;z-index:12;text-align:right}
+#s1b .ava{display:flex;justify-content:flex-end;margin-bottom:14px}
+#s1b .ava img{width:84px;height:84px;border-radius:50%;object-fit:cover;border:4px solid #fff;margin-left:-20px;box-shadow:0 10px 24px rgba(13,31,79,.25)}
+#s1b .right .t{font-size:26px;font-weight:800;color:var(--navy)}
+#s1b .right .s{font-size:22px;font-weight:500;color:var(--ink2);margin-top:6px;line-height:1.4}
+#s1b .right .gv{margin-top:18px;padding-top:16px;border-top:2px solid rgba(20,70,216,.18)}
 #s1b .flash{position:absolute;inset:0;z-index:20;background:#fff;pointer-events:none;opacity:0}
-
+#s1b.enter .flash{animation:flash 1.2s ease .05s both}
 @keyframes flash{0%{opacity:.95}100%{opacity:0}}
+#s1b.enter .lt:not(.dot){animation:softDrop 1.1s cubic-bezier(.22,.61,.36,1) both;animation-delay:calc(.2s + var(--i) * .12s)}
+#s1b.enter .lt.dot{animation:softDrop 1s cubic-bezier(.22,.61,.36,1) .8s both,dotpulse 3s ease-in-out 2.2s infinite}
+#s1b.enter .store{animation:softRise 1.3s cubic-bezier(.22,.61,.36,1) .4s both}
+#s1b.enter .flash{animation:none}
+#s1b.enter .pc{animation-name:softRise;animation-timing-function:cubic-bezier(.22,.61,.36,1)}
 </style>
 <section class="slide" id="s1b" data-n="2" data-ch="0" data-title="Phối cảnh điểm bán">
  <div class="rays"></div>
  <div class="floor"></div>
  <canvas class="pt" width="1920" height="1080"></canvas>
  <div class="lay" data-depth="-16">
-  <div class="orb big" style="left:-120px;top:820px;width:260px;height:260px"></div>
-  <div class="orb clear" style="right:-110px;top:900px;width:240px;height:240px"></div>
-  <div class="orb clear" style="left:180px;top:120px;width:140px;height:140px"></div>
+  <div class="orb big" style="left:-120px;top:870px;width:250px;height:250px"></div>
+  <div class="orb clear" style="right:-110px;top:960px;width:220px;height:220px"></div>
+  <div class="orb clear" style="left:600px;top:-80px;width:150px;height:150px"></div>
  </div>
  <div class="lay" data-depth="28">
-  <div class="orb float" style="left:200px;top:520px;width:84px;height:84px"></div>
-  <div class="orb lime float" style="right:220px;top:420px;width:60px;height:60px;animation-delay:-2s"></div>
-  <div class="orb float" style="right:300px;top:110px;width:46px;height:46px;animation-delay:-3s"></div>
+  <div class="orb float" style="left:430px;top:470px;width:80px;height:80px"></div>
+  <div class="orb lime float" style="right:430px;top:470px;width:56px;height:56px;animation-delay:-2s"></div>
+  <div class="orb float" style="right:640px;top:60px;width:44px;height:44px;animation-delay:-3s"></div>
+  
+ </div>
+ <div class="topbar fx" style="--d:.1s"><img data-asrc="logo" src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" alt="Logo SmartLiving Tap &amp; Go"></div>
+ <div class="lay" data-depth="12" style="z-index:9">
+  <div class="word" aria-label="SLTG">
+   <i class="lt" style="--i:0"><img data-asrc="gls" src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" alt=""><b class="gz"></b></i>
+   <i class="lt" style="--i:1"><img data-asrc="gll" src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" alt=""><b class="gz"></b></i>
+   <i class="lt" style="--i:2"><img data-asrc="glt" src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" alt=""><b class="gz"></b></i>
+   <i class="lt" style="--i:3"><img data-asrc="glg" src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" alt=""><b class="gz"></b></i>
+   <i class="lt dot" style="--i:4"><img data-asrc="gldot" src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" alt=""></i>
+  </div>
+  <i class="sp" style="left:540px;top:150px;--d:2.4s"></i><i class="sp" style="left:930px;top:120px;--d:3.1s;width:26px;height:26px"></i><i class="sp" style="left:1330px;top:170px;--d:2.8s"></i><i class="sp" style="left:700px;top:380px;--d:3.6s;width:22px;height:22px"></i><i class="sp" style="left:1180px;top:380px;--d:4s;width:24px;height:24px"></i>
+ </div>
+ <div class="lay" data-depth="20">
+  <div class="pcw"><div class="pc a"><img data-asrc="s1" src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" alt="Mặt tiền điểm bán"><b>Mặt tiền từ sảnh</b></div></div>
+  <div class="pcw b2"><div class="pc b"><img data-asrc="s5" src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" alt="Góc cà phê tự động"><b>Góc cà phê tự động</b></div></div>
+  <div class="pcw b3"><div class="pc c"><img data-asrc="s4" src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" alt="Cổng chạm thẻ"><b>Cổng chạm thẻ để vào</b></div></div>
  </div>
  <div class="glow"></div>
  <div class="halo"></div>
- <svg class="orbit" viewBox="0 0 1920 1080"><ellipse cx="960" cy="900" rx="700" ry="150"/><ellipse class="o2" cx="960" cy="900" rx="745" ry="162" stroke-opacity=".7"/>
-  <circle r="11" fill="#B5E61D" stroke="#fff" stroke-width="3"><animateMotion dur="11s" repeatCount="indefinite" path="M260,900 a700,150 0 1,0 1400,0 a700,150 0 1,0 -1400,0"/></circle>
-  <circle r="8" fill="#1446D8" stroke="#fff" stroke-width="3"><animateMotion dur="11s" begin="-5.5s" repeatCount="indefinite" path="M260,900 a700,150 0 1,0 1400,0 a700,150 0 1,0 -1400,0"/></circle></svg>
+ <svg class="orbit" viewBox="0 0 1920 1080"><ellipse id="orb1" cx="960" cy="810" rx="470" ry="130"/><ellipse class="o2" cx="960" cy="810" rx="505" ry="142" stroke-opacity=".7"/>
+  <circle r="10" fill="#B5E61D" stroke="#fff" stroke-width="3"><animateMotion dur="9s" repeatCount="indefinite" path="M490,810 a470,130 0 1,0 940,0 a470,130 0 1,0 -940,0"/></circle>
+  <circle r="7" fill="#1446D8" stroke="#fff" stroke-width="3"><animateMotion dur="9s" begin="-4.5s" repeatCount="indefinite" path="M490,810 a470,130 0 1,0 940,0 a470,130 0 1,0 -940,0"/></circle></svg>
  <div class="ring"></div><div class="ring r2"></div><div class="ring r3"></div>
  <div class="lay" data-depth="6" style="z-index:7"><div class="storewrap"><img class="store" data-asrc="iso" src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" alt="Phối cảnh cắt ngang điểm bán SmartLiving 30 m²"></div></div>
+ <div class="left fx left" style="--d:1.5s">
+  <div class="k">Phương án kinh doanh bất động sản</div>
+  <h1>SmartLiving<br><em>Tap &amp; Go</em></h1>
+  <p>Điểm bán tiện ích không người bán<br>trong chung cư và văn phòng<br>hạng A tại TP.HCM</p>
+ </div>
+ <div class="flash"></div>
  <template class="note">Đây là toàn cảnh một điểm bán SLTG: 30 mét vuông đặt ở góc sảnh, có cổng chạm thẻ, kệ hàng, tủ mát và góc cà phê tự động. Ngay sau đây, mời thầy và các bạn đi một vòng tham quan từng góc.</template>
  <template class="src"><p>Ảnh phối cảnh điểm bán: nhóm tự tạo, tách nền để trình chiếu.</p></template>
 </section>
+
+
 
 
 <!-- ===================== THAM QUAN ĐIỂM BÁN ===================== -->
@@ -2252,7 +2329,7 @@ const placeIso = sl => {
   iso.style.display = 'none'; iso.classList.add('placed');
 };
 slides.forEach(sl => sl.addEventListener('slide:enter', () => setTimeout(() => placeIso(sl), 1700)));
-$$('#s1 .lt .gz').forEach(g => { const im = g.parentElement.querySelector('img'); const set = () => { g.style.webkitMaskImage = g.style.maskImage = `url(${im.src})`; }; im.complete ? set() : im.addEventListener('load', set); set(); });
+$$('#s1 .lt .gz, #s1b .lt .gz').forEach(g => { const im = g.parentElement.querySelector('img'); const set = () => { g.style.webkitMaskImage = g.style.maskImage = `url(${im.src})`; }; im.complete ? set() : im.addEventListener('load', set); set(); });
 window.FX = {hooks, $, $$};
 })();
 
