@@ -381,8 +381,8 @@ ul.clean li::before{content:"";position:absolute;left:4px;top:.5em;width:14px;he
 /* so sánh trước/sau: chỉ dịch chuyển lớp (không vẽ lại ảnh mỗi khung hình) */
 #s3 .cmp .aftw{position:absolute;inset:0;overflow:hidden;transform:translateX(calc(var(--xv,50) * 1%));will-change:transform}
 #s3 .cmp .aftw .aft{clip-path:none!important;transform:translateX(calc(var(--xv,50) * -1%));will-change:transform}
-#s3 .cmp .bar{left:0!important;transform:translateX(calc(var(--xv,50) * 9.2px));will-change:transform}
-#s3 .cmp .knob{left:0!important;transform:translateX(calc(var(--xv,50) * 9.2px));will-change:transform}
+#s3 .cmp .bar{left:0!important;transform:translateX(calc(var(--xv,50) * 9.6px));will-change:transform}
+#s3 .cmp .knob{left:0!important;transform:translateX(calc(var(--xv,50) * 9.6px));will-change:transform}
 
 /* trong lúc chuyển slide và chạy hiệu ứng vào: tắt kính mờ (nhìn gần như không khác), bật lại khi slide đã đứng yên */
 
@@ -745,17 +745,17 @@ ul.clean li::before{content:"";position:absolute;left:4px;top:.5em;width:14px;he
 
 <!-- ===================== 3. TÍNH CẤP THIẾT ===================== -->
 <style>
-#s3 .grid{position:absolute;left:96px;top:300px;width:840px;display:grid;grid-template-columns:1fr 1fr;gap:24px;z-index:5}
+#s3 .grid{position:absolute;left:96px;top:300px;width:780px;display:grid;grid-template-columns:1fr 1fr;gap:24px;z-index:5}
 #s3 .grid .box{position:relative;min-height:262px;padding:28px 30px}
-#s3 .grid .big{font-size:76px}
-#s3 .cmp{position:absolute;left:1000px;top:0;width:920px;height:1080px;overflow:hidden;z-index:5;cursor:ew-resize;touch-action:none;clip-path:polygon(9% 0,100% 0,100% 100%,0 100%)}
+#s3 .grid .big{font-size:66px}
+#s3 .cmp{position:absolute;left:920px;top:300px;width:960px;height:536px;overflow:hidden;z-index:5;cursor:ew-resize;touch-action:none;border-radius:28px;border:6px solid #fff;box-sizing:content-box;box-shadow:0 40px 80px -30px rgba(13,42,122,.45)}
 #s3 .cmp img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;pointer-events:none;user-select:none}
 #s3 .cmp .aft{clip-path:inset(0 0 0 var(--x,50%))}
 #s3 .cmp .bar{position:absolute;top:0;bottom:0;left:var(--x,50%);width:6px;margin-left:-3px;background:#fff;box-shadow:0 0 20px rgba(0,0,0,.35)}
 #s3 .cmp .knob{position:absolute;top:50%;left:var(--x,50%);width:78px;height:78px;margin:-39px 0 0 -39px;border-radius:50%;background:var(--block);border:5px solid #fff;color:#fff;display:grid;place-items:center;font-size:30px;font-weight:900;box-shadow:0 10px 30px rgba(13,31,79,.4)}
-#s3 .cmp .tg{position:absolute;bottom:120px;padding:10px 20px;border-radius:30px;font-size:22px;font-weight:800;color:#fff;background:rgba(13,31,79,.82);backdrop-filter:blur(6px)}
+#s3 .cmp .tg{position:absolute;bottom:22px;padding:10px 20px;border-radius:30px;font-size:22px;font-weight:800;color:#fff;background:rgba(13,31,79,.82);backdrop-filter:blur(6px)}
 #s3 .cmp .tg.r{right:22px;background:rgba(20,70,216,.9)}
-#s3 .cmp .tg.l{left:120px}
+#s3 .cmp .tg.l{left:22px}
 #s3 .foot{display:none}#s3 .ccap{position:absolute;left:1060px;top:1000px;width:800px;display:flex;justify-content:space-between;align-items:center;z-index:6;padding:12px 22px;border-radius:30px;background:rgba(7,18,51,.78);backdrop-filter:blur(8px)}#s3 .ccap .hint,#s3 .ccap .cap{color:#fff}
 </style>
 <section class="slide cfx" id="c1" data-n="5" data-ch="1" data-title="Mở đầu: Vì sao chọn đề tài">
@@ -771,7 +771,7 @@ ul.clean li::before{content:"";position:absolute;left:4px;top:.5em;width:14px;he
  <div class="deco" aria-hidden="true"><div class="iso" style="left:-120px;bottom:-80px;width:500px;transform:scaleX(-1)"><img data-asrc="iso" src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" alt=""></div><i class="gl glime" style="right:40px;top:300px;width:50px;height:50px;--gd:0.25s"></i><i class="gl " style="right:40px;bottom:180px;width:90px;height:90px;--gd:0.40s"></i><i class="gl gclear" style="left:520px;bottom:20px;width:60px;height:60px;--gd:0.55s"></i><i class="gl gsoft" style="right:30%;top:-80px;width:140px;height:140px;--gd:0.70s"></i></div>
  <div class="hdr"><span class="pill">Mở đầu</span></div>
  <h2 class="ttl"><span class="no">1.</span><span class="tx">Tính cấp thiết của đề tài</span></h2>
- <div class="lede" style="max-width:840px">Nhu cầu nằm ngay trong tòa nhà, còn mặt bằng bán lẻ ngoài phố ngày càng đắt</div>
+ <div class="lede" style="max-width:1100px">Nhu cầu nằm ngay trong tòa nhà, còn mặt bằng bán lẻ ngoài phố ngày càng đắt</div>
  <div class="grid">
   <div class="box fx" style="--d:.3s"><div class="kick">Căn hộ đã chào bán</div><div class="big"><span class="count" data-to="355000">0</span></div><div class="lab">tại TP.HCM, là tệp khách sống ngay trên điểm bán</div></div>
   <div class="box blue fx" style="--d:.45s"><div class="kick">Văn phòng hạng A trống</div><div class="big">16,7–18,8<small>%</small></div><div class="lab">chủ tòa nhà cần tiện ích để giữ khách thuê</div></div>
