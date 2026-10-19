@@ -527,6 +527,10 @@ ul.clean li::before{content:"";position:absolute;left:4px;top:.5em;width:14px;he
 #s1b.enter .store{animation:softRise 1.3s cubic-bezier(.22,.61,.36,1) .4s both}
 #s1b.enter .flash{animation:none}
 #s1b.enter .pc{animation-name:softRise;animation-timing-function:cubic-bezier(.22,.61,.36,1)}
+#s1b .ring{left:960px;top:830px;width:270px;height:68px;margin:-34px 0 0 -135px;border:1.5px solid rgba(181,230,29,.75);box-shadow:0 0 14px rgba(181,230,29,.35),inset 0 0 10px rgba(181,230,29,.25)}
+#s1b.enter .ring{animation:ringSoft 6s cubic-bezier(.25,.6,.35,1) 1.6s infinite}
+#s1b.enter .ring.r2{animation-delay:3.6s}#s1b.enter .ring.r3{animation-delay:5.6s}
+@keyframes ringSoft{0%{transform:scale(.6);opacity:0}15%{opacity:.85}100%{transform:scale(3.85);opacity:0}}
 </style>
 <section class="slide" id="s1b" data-n="2" data-ch="0" data-title="Phối cảnh điểm bán">
  <div class="rays"></div>
@@ -564,6 +568,7 @@ ul.clean li::before{content:"";position:absolute;left:4px;top:.5em;width:14px;he
  <svg class="orbit" viewBox="0 0 1920 1080"><ellipse class="o2" cx="960" cy="830" rx="520" ry="132"/>
   <circle r="9" fill="#B5E61D" stroke="#fff" stroke-width="3"><animateMotion dur="12s" repeatCount="indefinite" path="M440,830 a520,132 0 1,0 1040,0 a520,132 0 1,0 -1040,0"/></circle></svg>
  
+ <div class="ring"></div><div class="ring r2"></div><div class="ring r3"></div>
  <div class="lay" data-depth="6" style="z-index:7"><div class="storewrap"><img class="store" data-asrc="iso" src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" alt="Phối cảnh cắt ngang điểm bán SmartLiving 30 m²"></div></div>
  <div class="left fx left" style="--d:1.5s">
   <div class="k">Phương án kinh doanh bất động sản</div>
