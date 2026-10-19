@@ -275,7 +275,6 @@ ul.clean li::before{content:"";position:absolute;left:4px;top:.5em;width:14px;he
 #bg .blob{filter:none!important;will-change:transform}
 #bg .b1{background:radial-gradient(circle,rgba(127,212,255,.75) 0%,rgba(127,212,255,0) 70%)}
 #bg .b2{background:radial-gradient(circle,rgba(78,141,255,.55) 0%,rgba(78,141,255,0) 68%)}
-#bg .dots,#bg .grid,#s1 .floor,#chapfx .floor{animation:none!important}
 #bg .sweep{left:0!important;transform:translateX(-600px) rotate(18deg);animation:sweep2 11s ease-in-out infinite!important;will-change:transform}
 @keyframes sweep2{0%,55%{transform:translateX(-600px) rotate(18deg)}100%{transform:translateX(2400px) rotate(18deg)}}
 #bg .rays,#s1 .rays,#chapfx .rays{will-change:transform}
@@ -386,6 +385,20 @@ ul.clean li::before{content:"";position:absolute;left:4px;top:.5em;width:14px;he
 
 /* trong lúc chuyển slide và chạy hiệu ứng vào: tắt kính mờ (nhìn gần như không khác), bật lại khi slide đã đứng yên */
 
+
+/* ===== chuyển động nền: giữ nguyên chuyển động, chạy bằng transform (card đồ họa lo, không vẽ lại cả màn hình mỗi khung) ===== */
+#bg .dots,#bg .grid,.cfx .floor,#s1b .floor,#chapfx .floor{animation:none!important;background-image:none!important;overflow:hidden}
+#bg .dots::before{content:"";position:absolute;left:-340px;top:-170px;right:0;bottom:0;background-image:radial-gradient(rgba(20,70,216,.20) 1.6px,transparent 2px);background-size:34px 34px;animation:dotT 40s linear infinite;will-change:transform}
+@keyframes dotT{to{transform:translate(340px,170px)}}
+#bg .grid::before{content:"";position:absolute;left:0;right:0;top:-120px;bottom:0;background-image:linear-gradient(rgba(20,70,216,.13) 2px,transparent 2px),linear-gradient(90deg,rgba(20,70,216,.13) 2px,transparent 2px);background-size:120px 120px;animation:gridT 6s linear infinite;will-change:transform}
+@keyframes gridT{to{transform:translateY(120px)}}
+.cfx .floor::before,#s1b .floor::before,#chapfx .floor::before{content:"";position:absolute;left:0;right:0;top:-110px;bottom:0;background-image:linear-gradient(rgba(20,70,216,.2) 2px,transparent 2px),linear-gradient(90deg,rgba(20,70,216,.2) 2px,transparent 2px);background-size:110px 110px;animation:floorT 3s linear infinite;will-change:transform}
+#s1b .floor::before{animation-duration:4s}
+@keyframes floorT{to{transform:translateY(110px)}}
+/* tia sáng xoay nhanh hơn để thấy rõ */
+#bg .rays{animation-duration:80s!important}
+#s1b .rays{animation-duration:50s!important}
+.cfx .rays,#chapfx .rays{animation-duration:40s!important}
 
 </style></head>
 <body>
